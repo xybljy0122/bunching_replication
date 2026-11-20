@@ -1,8 +1,10 @@
 # Bunching replication
 
-Replication workspace for **“Regulatory Costs of Being Public: Evidence from Bunching Estimation”** by **Michael Ewens, Kairong Xiao, and Ting Xu**. The supplied authors’ package identifies the paper as JFE forthcoming (2023).
+Replication workspace for **“Regulatory Costs of Being Public: Evidence from Bunching Estimation”** by **Michael Ewens, Kairong Xiao, and Ting Xu**. Published in *Journal of Financial Economics* **153** (2024), article **103775**. The supplied replication-package notes predate publication and refer to the 2023 forthcoming version.
 
 Replication package: [Mendeley Data (version 4)](https://data.mendeley.com/datasets/rf4skk7235/4).
+
+Additional source data: [public_float_regulation](https://github.com/michaelewens/public_float_regulation), downloaded into `data/`.
 
 ## Replication scope and limitations
 
@@ -20,13 +22,52 @@ This is primarily an analysis package operating on prepared inputs, rather than 
 
 ## Repository layout
 
-| Path | Contents |
+Every current root-level file and folder is documented below, including hidden entries. Paths are relative to the repository root.
+
+| Root entry | Purpose and handling |
 | --- | --- |
-| `code/` | Stata, MATLAB, R, and LaTeX analysis scripts |
-| `code/functions/` | Bunching estimator, MATLAB helpers, and Stata heatmap files |
-| `input/` | Prepared estimation samples, scrambled datasets, and bootstrap inputs |
-| `output/` | Supplied reference results; scripts also write generated results here |
-| `replication_package_readme.docx` | Authors’ data-availability and software notes |
+| `README.md` | This project guide: sources, directory inventory, replication limits, software requirements, and execution steps. |
+| `Regulatory Costs of Being Public:  Evidence from BunchingEstimation.pdf` | Local paper PDF, previously named `fullDraft100823.pdf`; use for checking methods and results. The filename contains two spaces after the colon. The file’s version has not been checked against the published article. |
+| `replication_package_readme.docx` | Original authors’ replication-package notes, including data sources, scrambling, software, and execution requirements. Preserve as source documentation. |
+| `code/` | Supplied Stata `.do`, MATLAB `.m`, R, and LaTeX analysis code, plus the supplied `master_log_scrambled.smcl`. `master.do` runs the Stata portion; `functions/` contains the estimator, MATLAB helpers, and Stata heatmap integration. Paths still need local configuration. |
+| `input/` | Authors’ prepared analysis inputs: threshold samples, main estimation spreadsheets, heterogeneity splits, bootstrap inputs, and IPO/going-private datasets. Some variables are scrambled. Preserve these inputs for the package-replication baseline. |
+| `data/` | Additional downloaded source data from `public_float_regulation`, with its README and license. Contains archives and extracted CSVs; currently separate from the analysis workflow. Treat downloaded files as immutable source inputs. |
+| `output/` | Supplied reference figures, tables, bootstrap results, and intermediate files. Existing scripts also write here and may overwrite them. Preserve reference copies or redirect new runs before execution. |
+| `.git/` | Local Git metadata: history, branches, index, and configuration. Managed by Git; not analysis data. |
+| `.DS_Store` | macOS Finder metadata, currently tracked in Git. Not required for replication; recommended for removal from tracking and exclusion in a future `.gitignore`. |
+
+There is currently no root `.gitignore`. A separate location for new run outputs and `data/derived/` for cleaned/merged data are recommended but have not yet been created. Keeping ZIPs and extracted CSVs is convenient locally; choose a consistent Git storage policy to avoid versioning redundant copies.
+
+## Additional source-data inventory
+
+The following files are currently present in `data/`:
+
+| File | Contents |
+| --- | --- |
+| `README.md` | Upstream source descriptions, variable definitions, and the published paper citation. |
+| `LICENSE` | Upstream MIT license; retain with the downloaded material. This does not replace terms applicable to other data sources. |
+| `public_float.csv.zip` | Downloaded archive of the public-float panel. |
+| `public_float.csv` | Extracted public-float panel: CIK, filing links, commission file number, reporting date, float year, and public float in millions. |
+| `length10K_less25m_float.csv` | Disclosure-length data for small firms, including filing type, fiscal year, small-business-issuer status, section lengths, and missing-section indicators. |
+| `sec_10Klinks_all.csv.zip` | Downloaded archive of SEC filing metadata and links. |
+| `sec_10Klinks_all.csv` | Extracted filing metadata: CIK, filing/reporting dates, form, company name, and filing URL. |
+| `.DS_Store` | Local macOS Finder metadata; not part of the upstream research data. |
+
+### Local validation (20 November 2026)
+
+- Both ZIP archives pass CRC integrity checks. Each extracted CSV is byte-for-byte identical to its archived counterpart. This checks local extraction integrity, not identity with a separately fetched upstream commit.
+- `public_float.csv` has **224,386 rows**, covering **1994–2018**. The pair `cik` + `publicfloat_year` is unique, with no blank keys.
+- Its public-float values include **164,773 positive values**, **57,884 zeros**, and **1,729 blanks**. This differs from the upstream README’s description of a positive-float-only dataset. Explicitly document the treatment of zeros and blanks when constructing samples; do not silently treat them as positive observations.
+- `length10K_less25m_float.csv` has **11,565 rows**; `sec_10Klinks_all.csv` has **301,118 rows**. Both parse as CSV and contain the expected column names. Their substantive contents and key uniqueness have not been fully validated.
+- The upstream commit and download date have not yet been recorded. Record them if recoverable; file modification times alone do not establish provenance.
+
+### Integration with the replication inputs
+
+The current analysis scripts use `input/`; downloading files into `data/` does not connect them to the workflow. No merge has been performed.
+
+For initial validation, compare `data/public_float.csv` against the prepared threshold samples using `cik` + `publicfloat_year`. Standardize key types, verify uniqueness on both sides, retain both versions of public float, and report unmatched records and value differences before changing any analysis input. Preserve existing sample restrictions and treatment indicators during this comparison.
+
+Do not assume every dataset has an equivalent year key. In particular, inspected records in `input/table2.dta` contain `fyear` values such as 6, 8, and 4; investigate these before attempting a calendar-year merge. The source public-float panel cannot restore scrambled financial controls or outcomes. A complete raw-data reconstruction still requires the relevant original sources and sample-construction rules.
 
 ## Code map
 
@@ -72,4 +113,8 @@ The files named `input/bootstrap_1.csv` through `bootstrap_3.csv` are actually l
 
 ## Data use and attribution
 
-The authors’ package describes the data as intended for academic use and requests citation of Ewens, Xiao, and Xu (2023) when reusing the data or code. Consult the original package notes and applicable source-data terms before reuse or redistribution.
+The original package describes the data as intended for academic use and requests citation when reusing the data or code. The additional source repository supplies the following published citation:
+
+Ewens, Michael, Kairong Xiao, and Ting Xu. “Regulatory costs of being public: Evidence from bunching estimation.” *Journal of Financial Economics* 153 (2024): 103775.
+
+Retain `data/README.md` and `data/LICENSE`. Consult the original package notes and applicable source-data terms before reuse or redistribution.
