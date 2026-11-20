@@ -1,0 +1,3364 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}F:\Dropbox\bunching_JOBS\JFE_replication\code\master_log_scrambled.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}13 Dec 2023, 15:15:54
+{txt}
+{com}. 
+. ****************
+. * Figures 1 & 2
+. ****************
+. do Figures1&2.do
+{txt}
+{com}. *************************************
+. *Replication code for Ewens Xiao and Xu 2023
+. *************************************
+. ****************
+. * Figures 1 & 2
+. ****************
+. 
+. *25m threshold
+. **************
+. use $input/sample_25m, clear
+{txt}
+{com}. 
+. *Figures 1a & 1b
+. distplot publicfloat_mil ///
+> if publicfloat_mil>=23 & publicfloat_mil<=28, over(treat) xline(25, lpattern(dash)) ///
+> lpattern(dash) graphregion(color(white)) plotregion(color(white)) legend(symxsize(*0.5) symysize(*0.5) col(2) position(6))
+{res}{txt}
+{com}. graph export $output/Figure1a.png, as(png) replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure1a.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. twoway hist publicfloat_mil ///
+> if publicfloat_mil>=20 & publicfloat_mil<=30 ///
+> , by(treat, note("") graphregion(color(white)) plotregion(color(white))) xline(25, lcolor(red)) width(1) frac gap(40) subtitle(,bcolor(white))
+{res}{txt}
+{com}. graph export $output/Figure1b.png, as(png) replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure1b.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. 
+. *Figures 2a & 2b
+. distplot publicfloat_mil ///
+> if publicfloat_mil>=13 & publicfloat_mil<=18, over(treat) xline(15, lpattern(dash)) ///
+> lpattern(dash) graphregion(color(white)) plotregion(color(white)) legend(symxsize(*0.5) symysize(*0.5) col(2) position(6))
+{res}{txt}
+{com}. graph export $output/Figure2a.png, as(png) replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure2a.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. graph twoway hist publicfloat_mil ///
+> if publicfloat_mil>=12 & publicfloat_mil<=18 ///
+> , by(treat, note("") graphregion(color(white)) plotregion(color(white))) xline(15, lcolor(red)) width(0.5) frac gap(40) subtitle(,bcolor(white))
+{res}{txt}
+{com}. graph export $output/Figure2b.png, as(png) replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure2b.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. 
+. 
+. *75m threshold
+. **************
+. use $input/sample_75m, clear
+{txt}
+{com}. 
+. *Figures 1c & 1d
+. distplot publicfloat_mil ///
+> if publicfloat_mil>=65 & publicfloat_mil<=90, over(treat) xline(75, lpattern(dash)) ///
+> lpattern(dash) graphregion(color(white)) plotregion(color(white)) legend(symxsize(*0.5) symysize(*0.5) col(2) position(6))
+{res}{txt}
+{com}. graph export $output/Figure1c.png, as(png) replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure1c.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. graph twoway hist publicfloat_mil ///
+> if publicfloat_mil>=40 & publicfloat_mil<=120 ///
+> , by(treat, note("") graphregion(color(white)) plotregion(color(white))) xline(75, lcolor(red)) width(5) frac gap(40) subtitle(,bcolor(white))
+{res}{txt}
+{com}. graph export $output/Figure1d.png, as(png) replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure1d.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. 
+. *Figures 2c & 2d
+. distplot publicfloat_mil ///
+> if publicfloat_mil>=55 & publicfloat_mil<=70, over(treat) xline(60, lpattern(dash)) ///
+> lpattern(dash) graphregion(color(white)) plotregion(color(white)) legend(symxsize(*0.5) symysize(*0.5) col(2) position(6))
+{res}{txt}
+{com}. graph export $output/Figure2c.png, as(png) replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure2c.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. graph twoway hist publicfloat_mil ///
+> if publicfloat_mil>=55 & publicfloat_mil<=65 ///
+> , by(treat, note("") graphregion(color(white)) plotregion(color(white))) xline(60, lcolor(red)) width(1) frac gap(40) subtitle(,bcolor(white))
+{res}{txt}
+{com}. graph export $output/Figure2d.png, as(png) replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure2d.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. 
+. 
+. *700m threshold
+. **************
+. use $input/sample_700m, clear
+{txt}
+{com}. 
+. *Figures 1e & 1f
+. distplot publicfloat_mil ///
+> if publicfloat_mil>=600 & publicfloat_mil<=900, over(treat) xline(700, lpattern(dash)) ///
+> lpattern(dash) graphregion(color(white)) plotregion(color(white)) legend(symxsize(*0.5) symysize(*0.5) col(2) position(6))
+{res}{txt}
+{com}. graph export $output/Figure1d.png, as(png) replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure1d.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. graph twoway hist publicfloat_mil if ///
+> publicfloat_mil>=400 & publicfloat_mil<=1200, ///
+> by(treat, note("") graphregion(color(white)) plotregion(color(white))) xline(700, lcolor(red)) width(50) frac gap(40) subtitle(,bcolor(white))
+{res}{txt}
+{com}. graph export $output/Figure1e.png, as(png) replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure1e.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. 
+. *Figures 2e & 2f
+. distplot publicfloat_mil ///
+> if publicfloat_mil>=400 & publicfloat_mil<=600, over(treat) xline(500, lpattern(dash)) ///
+> lpattern(dash) graphregion(color(white)) plotregion(color(white)) legend(symxsize(*0.5) symysize(*0.5) col(2) position(6))
+{res}{txt}
+{com}. graph export $output/Figure2d.png, as(png) replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure2d.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. graph twoway hist publicfloat_mil if ///
+> publicfloat_mil>=400 & publicfloat_mil<=600, ///
+> by(treat, note("") graphregion(color(white)) plotregion(color(white))) xline(500, lcolor(red)) width(25) frac gap(40) subtitle(,bcolor(white))
+{res}{txt}
+{com}. graph export $output/Figure2e.png, as(png) replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure2e.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+{txt}end of do-file
+
+{com}. 
+. 
+. ****************
+. * Figures 3 & 4
+. ****************
+. * Figure3.tex (theoretical graphs plotted by LaTex)
+. * Figure4.m (theoretical graph generated by Matlab)
+. 
+. 
+. ****************
+. * Figure 5
+. ****************
+. /*
+> First, copy heatmap.ado and heatmap.sthlp to your PERSONAL or PLUS folder
+> Install R package "heatmapEco" in R (see details in the help file to heatmap, as well as here: https://github.com/ttfcui/heatmapEco)
+> */
+. 
+. do Figure5.do
+{txt}
+{com}. *************************************
+. *Replication code for Ewens Xiao and Xu 2023
+. *************************************
+. ****************
+. * Figure 5
+. ****************
+. /*
+> copy heatmap.ado and heatmap.sthlp to your PERSONAL or PLUS folder
+> 
+> Install R package "heatmapEco" in R (see details in the help file to heatmap, as well as here: https://github.com/ttfcui/heatmapEco)
+> */
+. global linkdir "C:\Program Files\R\R-4.2.2\bin"  //For Windows
+{txt}
+{com}. *global linkdir "/Library/Frameworks/R.framework/Versions/4.2-arm64/Resources" //For Mac
+. 
+. 
+. 
+. use $input/Figure5, clear
+{txt}
+{com}. g float_interval=.
+{txt}(224,386 missing values generated)
+
+{com}. forv x=1/20 {c -(}
+{txt}  2{com}. replace float_interval=`x'*5 if publicfloat_mil>`x'*5-2.5 & publicfloat_mil<=`x'*5+2.5
+{txt}  3{com}. {c )-}
+{txt}(14,914 real changes made)
+(9,351 real changes made)
+(6,844 real changes made)
+(5,239 real changes made)
+(4,505 real changes made)
+(3,634 real changes made)
+(3,206 real changes made)
+(2,817 real changes made)
+(2,435 real changes made)
+(2,368 real changes made)
+(2,053 real changes made)
+(1,849 real changes made)
+(1,731 real changes made)
+(1,641 real changes made)
+(1,452 real changes made)
+(1,254 real changes made)
+(1,247 real changes made)
+(1,197 real changes made)
+(1,045 real changes made)
+(1,112 real changes made)
+
+{com}. forv x=3/20 {c -(}
+{txt}  2{com}. replace float_interval=`x'*50 if publicfloat_mil>`x'*50-25 & publicfloat_mil<=`x'*50+25
+{txt}  3{com}. {c )-}
+{txt}(6,892 real changes made)
+(5,165 real changes made)
+(3,903 real changes made)
+(3,277 real changes made)
+(2,804 real changes made)
+(2,348 real changes made)
+(2,029 real changes made)
+(1,822 real changes made)
+(1,546 real changes made)
+(1,551 real changes made)
+(1,430 real changes made)
+(1,190 real changes made)
+(1,138 real changes made)
+(1,029 real changes made)
+(940 real changes made)
+(889 real changes made)
+(826 real changes made)
+(871 real changes made)
+
+{com}. forv x=3/20 {c -(}
+{txt}  2{com}. replace float_interval=`x'*500 if publicfloat_mil>`x'*500-250 & publicfloat_mil<=`x'*500+250
+{txt}  3{com}. {c )-}
+{txt}(4,819 real changes made)
+(3,246 real changes made)
+(2,275 real changes made)
+(1,904 real changes made)
+(1,432 real changes made)
+(1,204 real changes made)
+(974 real changes made)
+(787 real changes made)
+(667 real changes made)
+(587 real changes made)
+(514 real changes made)
+(462 real changes made)
+(452 real changes made)
+(393 real changes made)
+(328 real changes made)
+(364 real changes made)
+(301 real changes made)
+(268 real changes made)
+
+{com}. mdesc publicfloat_mil
+
+{txt}    Variable{col 17}{c |}     Missing          Total     Percent Missing
+{hline 16}{c +}{hline 47}
+   publicfloa~l{col 17}{c |} {res}      1,729        224,386           0.77
+{txt}{hline 16}{c +}{hline 47}
+
+{com}. count if publicfloat_mil>12500
+  {res}7,127
+{txt}
+{com}. count if publicfloat_mil<=2.5
+  {res}78,824
+{txt}
+{com}. tab float_interval, mis
+
+{txt}float_inter {c |}
+        val {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          5 {c |}{res}     14,914        6.65        6.65
+{txt}         10 {c |}{res}      9,351        4.17       10.81
+{txt}         15 {c |}{res}      6,844        3.05       13.86
+{txt}         20 {c |}{res}      5,239        2.33       16.20
+{txt}         25 {c |}{res}      4,505        2.01       18.21
+{txt}         30 {c |}{res}      3,634        1.62       19.83
+{txt}         35 {c |}{res}      3,206        1.43       21.25
+{txt}         40 {c |}{res}      2,817        1.26       22.51
+{txt}         45 {c |}{res}      2,435        1.09       23.60
+{txt}         50 {c |}{res}      2,368        1.06       24.65
+{txt}         55 {c |}{res}      2,053        0.91       25.57
+{txt}         60 {c |}{res}      1,849        0.82       26.39
+{txt}         65 {c |}{res}      1,731        0.77       27.16
+{txt}         70 {c |}{res}      1,641        0.73       27.89
+{txt}         75 {c |}{res}      1,452        0.65       28.54
+{txt}         80 {c |}{res}      1,254        0.56       29.10
+{txt}         85 {c |}{res}      1,247        0.56       29.65
+{txt}         90 {c |}{res}      1,197        0.53       30.19
+{txt}         95 {c |}{res}      1,045        0.47       30.65
+{txt}        100 {c |}{res}      1,112        0.50       31.15
+{txt}        150 {c |}{res}      6,892        3.07       34.22
+{txt}        200 {c |}{res}      5,165        2.30       36.52
+{txt}        250 {c |}{res}      3,903        1.74       38.26
+{txt}        300 {c |}{res}      3,277        1.46       39.72
+{txt}        350 {c |}{res}      2,804        1.25       40.97
+{txt}        400 {c |}{res}      2,348        1.05       42.02
+{txt}        450 {c |}{res}      2,029        0.90       42.92
+{txt}        500 {c |}{res}      1,822        0.81       43.73
+{txt}        550 {c |}{res}      1,546        0.69       44.42
+{txt}        600 {c |}{res}      1,551        0.69       45.11
+{txt}        650 {c |}{res}      1,430        0.64       45.75
+{txt}        700 {c |}{res}      1,190        0.53       46.28
+{txt}        750 {c |}{res}      1,138        0.51       46.79
+{txt}        800 {c |}{res}      1,029        0.46       47.25
+{txt}        850 {c |}{res}        940        0.42       47.67
+{txt}        900 {c |}{res}        889        0.40       48.06
+{txt}        950 {c |}{res}        826        0.37       48.43
+{txt}       1000 {c |}{res}        871        0.39       48.82
+{txt}       1500 {c |}{res}      4,819        2.15       50.97
+{txt}       2000 {c |}{res}      3,246        1.45       52.41
+{txt}       2500 {c |}{res}      2,275        1.01       53.43
+{txt}       3000 {c |}{res}      1,904        0.85       54.28
+{txt}       3500 {c |}{res}      1,432        0.64       54.91
+{txt}       4000 {c |}{res}      1,204        0.54       55.45
+{txt}       4500 {c |}{res}        974        0.43       55.88
+{txt}       5000 {c |}{res}        787        0.35       56.24
+{txt}       5500 {c |}{res}        667        0.30       56.53
+{txt}       6000 {c |}{res}        587        0.26       56.79
+{txt}       6500 {c |}{res}        514        0.23       57.02
+{txt}       7000 {c |}{res}        462        0.21       57.23
+{txt}       7500 {c |}{res}        452        0.20       57.43
+{txt}       8000 {c |}{res}        393        0.18       57.61
+{txt}       8500 {c |}{res}        328        0.15       57.75
+{txt}       9000 {c |}{res}        364        0.16       57.91
+{txt}       9500 {c |}{res}        301        0.13       58.05
+{txt}      10000 {c |}{res}        268        0.12       58.17
+{txt}          . {c |}{res}     93,865       41.83      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}    224,386      100.00
+{txt}
+{com}. drop if float_interval==.
+{txt}(93,865 observations deleted)
+
+{com}. keep if publicfloat_year>=1994 & publicfloat_year<=2018 
+{txt}(0 observations deleted)
+
+{com}. collapse (count) N=publicfloat_mil (median) regcost_* publicfloat_mil r_capm, by(float_interval publicfloat_year)
+{res}{txt}
+{com}. rename publicfloat_year year
+{res}{txt}
+{com}. sum N, det
+
+                   {txt}(count) publicfloat_mil
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        6              2
+{txt} 5%    {res}       12              2
+{txt}10%    {res}       16              2       {txt}Obs         {res}      1,400
+{txt}25%    {res}       31              3       {txt}Sum of wgt. {res}      1,400
+
+{txt}50%    {res}       59                      {txt}Mean          {res} 93.22929
+                        {txt}Largest       Std. dev.     {res} 114.6913
+{txt}75%    {res}      108            958
+{txt}90%    {res}    200.5            997       {txt}Variance      {res} 13154.09
+{txt}95%    {res}      285            998       {txt}Skewness      {res}  3.85002
+{txt}99%    {res}      625           1159       {txt}Kurtosis      {res} 24.23655
+{txt}
+{com}. rename (regcost_25-regcost_700) (k_sd k_sox k_egc)
+{res}{txt}
+{com}. 
+. *code annual costs for age>5
+. tsset float_interval year
+{res}
+{col 1}{txt:Panel variable: }{res:float_interval}{txt: (strongly balanced)}
+{p 1 16 2}{txt:Time variable: }{res:year}{txt:, }{res:{bind:1994}}{txt: to }{res:{bind:2018}}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}
+{com}. g k_old=.
+{txt}(1,400 missing values generated)
+
+{com}. replace k_old=k_egc-k_sox-k_sd if year>=1994 & year<=2002 & float_interval<25
+{txt}(36 real changes made)
+
+{com}. replace k_old=k_egc-k_sox if year>=1994 & year<=2002 & float_interval>=25
+{txt}(468 real changes made)
+
+{com}. replace k_old=k_egc-k_sox-k_sd if year>=2003 & year<=2007 & float_interval<25
+{txt}(20 real changes made)
+
+{com}. replace k_old=k_egc-k_sox if year>=2003 & year<=2007 & float_interval>=25 & float_interval<75
+{txt}(50 real changes made)
+
+{com}. replace k_old=k_egc if year>=2003 & year<=2007 & float_interval>=75
+{txt}(210 real changes made)
+
+{com}. replace k_old=k_egc-k_sox-k_sd if year>=2008 & year<=2018 & float_interval<25
+{txt}(44 real changes made)
+
+{com}. replace k_old=k_egc-k_sox-k_sd if year>=2008 & year<=2018 & float_interval>=25 & float_interval<75
+{txt}(110 real changes made)
+
+{com}. replace k_old=k_egc if year>=2008 & year<=2018 & float_interval>=75
+{txt}(462 real changes made)
+
+{com}. rename k_old totalcosts_old
+{res}{txt}
+{com}. sum totalcosts_old, det
+
+                       {txt}totalcosts_old
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       -6             -8
+{txt} 5%    {res}       -5             -7
+{txt}10%    {res}       -4             -7       {txt}Obs         {res}      1,400
+{txt}25%    {res}       -1             -7       {txt}Sum of wgt. {res}      1,400
+
+{txt}50%    {res}        2                      {txt}Mean          {res} 1.455714
+                        {txt}Largest       Std. dev.     {res} 3.453278
+{txt}75%    {res}      4.5              7
+{txt}90%    {res}        5              7       {txt}Variance      {res} 11.92513
+{txt}95%    {res}      5.5              7       {txt}Skewness      {res}-.5601518
+{txt}99%    {res}        6              9       {txt}Kurtosis      {res}  2.22872
+{txt}
+{com}. replace totalcosts_old=0 if totalcosts_old<0
+{txt}(391 real changes made)
+
+{com}. g pvtotalcosts_2float_old=(totalcosts_old/r_capm)/publicfloat
+{txt}
+{com}. winsor2 pvtotalcosts_2float_old, cut(0.5 99.5) replace
+{res}Warning: {txt}cuts(1   99) means winsor at   1th percentile and 99th percentile,
+         cuts(0.1 90) means winsor at 0.1th percentile and 90th percentile,
+         make sure cuts(.5 99.5) you specified is what you want. 
+
+{com}. 
+. *code annual costs for age<=5
+. foreach x in totalcosts pvtotalcosts_2float {c -(}
+{txt}  2{com}. g `x'_young=`x'_old
+{txt}  3{com}. replace `x'_young=0 if year>=2012 & year<=2018 & float_interval<700
+{txt}  4{com}. {c )-}
+{txt}(119 real changes made)
+(119 real changes made)
+
+{com}. rename float_interval publicfloat
+{res}{txt}
+{com}. g publicfloat_str=string(publicfloat)
+{txt}
+{com}. 
+. *plot heatmaps
+. heatmap pvtotalcosts_2float_young publicfloat_str year if publicfloat<=1000, ///
+> xtitle("Year") ytitle("Public float in mil") ztitle("PV(regulatory costs)/float") ///
+> tperiod(year) save($output/Figure5a.pdf)
+{txt}(450 observations deleted)
+{p 0 4 2}
+(file {bf}
+C:\Users\Ting.Xu\AppData\Local\Temp\ST_37d8_000002.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\Ting.Xu\AppData\Local\Temp\ST_37d8_000002.tmp{rm}
+saved
+as .dta format
+{p_end}
+
+{p 0 4}{txt}Duplicates in terms of {res} publicfloat_str{p_end}
+
+{txt}(912 observations deleted)
+{p 0 4 2}
+(file {bf}
+C:\Users\Ting.Xu\AppData\Local\Temp\ST_37d8_000003.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\Ting.Xu\AppData\Local\Temp\ST_37d8_000003.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             950{txt}  
+{col 5}{hline 41}
+{res}{txt}(0 observations deleted)
+{res}
+{col 1}{txt:Panel variable: }{res:year}{txt: (strongly balanced)}
+{p 1 16 2}{txt:Time variable: }{res:quantile}{txt:, }{res:{bind:1}}{txt: to }{res:{bind:38}}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}(950 real changes made)
+{res}{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/heatmap_out.csv{rm}
+not found)
+{p_end}
+{txt}file {bf:F:/Dropbox/bunching_JOBS/JFE_replication/output/heatmap_out.csv} saved
+{res}{txt}(17 missing values generated)
+variable {bf}{res}argv{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str4{sf}
+{txt}(1 real change made)
+variable {bf}{res}argv{sf}{txt} was {bf}{res}str4{sf}{txt} now {bf}{res}str63{sf}
+{txt}(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(0 real changes made)
+(0 real changes made)
+(1 real change made)
+(0 real changes made)
+(1 real change made)
+(0 real changes made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(0 real changes made)
+Verify policy markers correct: 
+{res}{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/heatmap_args.csv{rm}
+not found)
+{p_end}
+{txt}file {bf:F:/Dropbox/bunching_JOBS/JFE_replication/output/heatmap_args.csv} saved
+[1] "Evaluation of function arguments:"
+$xq
+[1] "TRUE"
+
+$fname
+[1] "F:/Dropbox/bunching_JOBS/JFE_replication/output/heatmap_out.csv"
+
+$save
+[1] "F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure5a.pdf"
+
+$t.fmt
+[1] "%d%b%Y"
+
+$t.per
+[1] "year"
+
+$factor.ax
+[1] "TRUE"
+
+$xtitle
+[1] "Year"
+
+$ytitle
+[1] "Public float in mil"
+
+$ztitle
+[1] "PV(regulatory costs)/float"
+
+$zlab
+[1] 0
+
+Warning messages:
+1: In regularize.values(x, y, ties, missing(ties), na.rm = na.rm) :
+  collapsing to unique 'x' values
+2: In regularize.values(x, y, ties, missing(ties), na.rm = na.rm) :
+  collapsing to unique 'x' values
+3: Removed 950 rows containing missing values (`geom_text()`). 
+4: Removed 1 rows containing missing values (`geom_vline()`). 
+5: In regularize.values(x, y, ties, missing(ties), na.rm = na.rm) :
+  collapsing to unique 'x' values
+6: In regularize.values(x, y, ties, missing(ties), na.rm = na.rm) :
+  collapsing to unique 'x' values
+
+{com}. 
+. heatmap pvtotalcosts_2float_old publicfloat_str year if publicfloat<=1000, ///
+> xtitle("Year") ytitle("Public float in mil") ztitle("PV(regulatory costs)/float") ///
+> tperiod(year) save($output/Figure5b.pdf)
+{txt}(450 observations deleted)
+{p 0 4 2}
+(file {bf}
+C:\Users\Ting.Xu\AppData\Local\Temp\ST_37d8_000002.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\Ting.Xu\AppData\Local\Temp\ST_37d8_000002.tmp{rm}
+saved
+as .dta format
+{p_end}
+
+{p 0 4}{txt}Duplicates in terms of {res} publicfloat_str{p_end}
+
+{txt}(912 observations deleted)
+{p 0 4 2}
+(file {bf}
+C:\Users\Ting.Xu\AppData\Local\Temp\ST_37d8_000003.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\Ting.Xu\AppData\Local\Temp\ST_37d8_000003.tmp{rm}
+saved
+as .dta format
+{p_end}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             950{txt}  
+{col 5}{hline 41}
+{res}{txt}(0 observations deleted)
+{res}
+{col 1}{txt:Panel variable: }{res:year}{txt: (strongly balanced)}
+{p 1 16 2}{txt:Time variable: }{res:quantile}{txt:, }{res:{bind:1}}{txt: to }{res:{bind:38}}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}(950 real changes made)
+{res}{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/heatmap_out.csv{rm}
+not found)
+{p_end}
+{txt}file {bf:F:/Dropbox/bunching_JOBS/JFE_replication/output/heatmap_out.csv} saved
+{res}{txt}(17 missing values generated)
+variable {bf}{res}argv{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str4{sf}
+{txt}(1 real change made)
+variable {bf}{res}argv{sf}{txt} was {bf}{res}str4{sf}{txt} now {bf}{res}str63{sf}
+{txt}(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(0 real changes made)
+(0 real changes made)
+(1 real change made)
+(0 real changes made)
+(1 real change made)
+(0 real changes made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(0 real changes made)
+Verify policy markers correct: 
+{res}{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/heatmap_args.csv{rm}
+not found)
+{p_end}
+{txt}file {bf:F:/Dropbox/bunching_JOBS/JFE_replication/output/heatmap_args.csv} saved
+[1] "Evaluation of function arguments:"
+$xq
+[1] "TRUE"
+
+$fname
+[1] "F:/Dropbox/bunching_JOBS/JFE_replication/output/heatmap_out.csv"
+
+$save
+[1] "F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure5b.pdf"
+
+$t.fmt
+[1] "%d%b%Y"
+
+$t.per
+[1] "year"
+
+$factor.ax
+[1] "TRUE"
+
+$xtitle
+[1] "Year"
+
+$ytitle
+[1] "Public float in mil"
+
+$ztitle
+[1] "PV(regulatory costs)/float"
+
+$zlab
+[1] 0
+
+Warning messages:
+1: In regularize.values(x, y, ties, missing(ties), na.rm = na.rm) :
+  collapsing to unique 'x' values
+2: In regularize.values(x, y, ties, missing(ties), na.rm = na.rm) :
+  collapsing to unique 'x' values
+3: Removed 950 rows containing missing values (`geom_text()`). 
+4: Removed 1 rows containing missing values (`geom_vline()`). 
+5: In regularize.values(x, y, ties, missing(ties), na.rm = na.rm) :
+  collapsing to unique 'x' values
+6: In regularize.values(x, y, ties, missing(ties), na.rm = na.rm) :
+  collapsing to unique 'x' values
+
+{com}. 
+. 
+. 
+{txt}end of do-file
+
+{com}. 
+. 
+. ****************
+. * Figure 6
+. ****************
+. do Figure6.do
+{txt}
+{com}. *************************************
+. *Replication code for Ewens Xiao and Xu 2023
+. *************************************
+. ****************
+. * Figure 6
+. ****************
+. 
+. use $input/Figure6, clear
+{txt}
+{com}. g K_share_ebitda=100* K_total_sum/ebitda
+{txt}(4 missing values generated)
+
+{com}. label var K_total_sum "Aggregate regulatory costs"
+{txt}
+{com}. label var K_share_ebitda "Share of aggregate EBITDA (%)"
+{txt}
+{com}. 
+. 
+. keep if year>=1995
+{txt}(1 observation deleted)
+
+{com}. 
+. twoway (line K_total_sum year, lpattern(dash) lcolor(navy)) || (line K_share_ebitda year, yaxis(2)), aspectratio(0.6) ytitle("Aggregate regulatory costs in mil $") ytitle("Share of aggregate EBITDA (%)", axis(2)) ylabel(1000(1000)6000, angle(vertical) grid) ylabel(0.1(0.05)0.35, angle(vertical) grid axis(2)) xtitle("") xlabel(1995(3)2019, nogrid) graphregion(color(white)) plotregion(color(white)) legend(col(2) position(6)) xline(2002) xline(2012) text(6000 2002.5 "SOX", place(e)) text(6000 2012.5 "JOBS Act", place(e))
+{res}{txt}
+{com}. graph export $output/Figure6.png, replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure6.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. 
+. 
+{txt}end of do-file
+
+{com}. 
+. 
+. ****************
+. * Figure 7
+. ****************
+. do Figure7.do
+{txt}
+{com}. *************************************
+. *Replication code for Ewens Xiao and Xu 2023
+. *************************************
+. ****************
+. * Figure 7
+. ****************
+. use $input/ipo_counterfactual_v3, clear
+{txt}
+{com}. 
+. logit ipo_dummy ln_K_total ln_publicfloat_mil ln_totalRaised age  ///
+> i.ind_year_fe i.state_fe, cluster(newID)
+
+{res}{txt}Iteration 0:{space 2}Log pseudolikelihood = {res:-38106.406}  
+Iteration 1:{space 2}Log pseudolikelihood = {res:-38099.791}  
+Iteration 2:{space 2}Log pseudolikelihood = {res:-38099.789}  
+{res}
+{txt}{col 1}Logistic regression{col 56}{lalign 13:Number of obs}{col 69} = {res}{ralign 7:116,703}
+{txt}{col 56}{lalign 13:Wald chi2({res:22})}{col 69} = {res}{ralign 7:13.25}
+{txt}{col 56}{lalign 13:Prob > chi2}{col 69} = {res}{ralign 7:0.9259}
+{txt}{col 1}{lalign 20:Log pseudolikelihood}{col 21} = {res}{ralign 10:-38099.789}{txt}{col 56}{lalign 13:Pseudo R2}{col 69} = {res}{ralign 7:0.0002}
+
+{txt}{ralign 84:(Std. err. adjusted for {res:21,451} clusters in {res:newID})}
+{hline 19}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 20}{c |}{col 32}    Robust
+{col 1}         ipo_dummy{col 20}{c |} Coefficient{col 32}  std. err.{col 44}      z{col 52}   P>|z|{col 60}     [95% con{col 73}f. interval]
+{hline 19}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}ln_K_total {c |}{col 20}{res}{space 2} .0007928{col 32}{space 2} .0033749{col 43}{space 1}    0.23{col 52}{space 3}0.814{col 60}{space 4}-.0058219{col 73}{space 3} .0074076
+{txt}ln_publicfloat_mil {c |}{col 20}{res}{space 2}-.0020433{col 32}{space 2} .0033858{col 43}{space 1}   -0.60{col 52}{space 3}0.546{col 60}{space 4}-.0086793{col 73}{space 3} .0045928
+{txt}{space 4}ln_totalRaised {c |}{col 20}{res}{space 2}-.0016464{col 32}{space 2} .0034022{col 43}{space 1}   -0.48{col 52}{space 3}0.628{col 60}{space 4}-.0083146{col 73}{space 3} .0050219
+{txt}{space 15}age {c |}{col 20}{res}{space 2} .0010257{col 32}{space 2} .0034263{col 43}{space 1}    0.30{col 52}{space 3}0.765{col 60}{space 4}-.0056897{col 73}{space 3} .0077411
+{txt}{space 18} {c |}
+{space 7}ind_year_fe {c |}
+{space 16}1  {c |}{col 20}{res}{space 2} .0490692{col 32}{space 2} .0431486{col 43}{space 1}    1.14{col 52}{space 3}0.255{col 60}{space 4}-.0355005{col 73}{space 3}  .133639
+{txt}{space 16}2  {c |}{col 20}{res}{space 2} .0664202{col 32}{space 2} .0433863{col 43}{space 1}    1.53{col 52}{space 3}0.126{col 60}{space 4}-.0186155{col 73}{space 3} .1514559
+{txt}{space 16}3  {c |}{col 20}{res}{space 2} .0228719{col 32}{space 2} .0427948{col 43}{space 1}    0.53{col 52}{space 3}0.593{col 60}{space 4}-.0610043{col 73}{space 3} .1067482
+{txt}{space 16}4  {c |}{col 20}{res}{space 2}  .012991{col 32}{space 2} .0435523{col 43}{space 1}    0.30{col 52}{space 3}0.765{col 60}{space 4}-.0723699{col 73}{space 3}  .098352
+{txt}{space 16}5  {c |}{col 20}{res}{space 2}  .038536{col 32}{space 2} .0434013{col 43}{space 1}    0.89{col 52}{space 3}0.375{col 60}{space 4} -.046529{col 73}{space 3} .1236011
+{txt}{space 16}6  {c |}{col 20}{res}{space 2} .0346441{col 32}{space 2} .0434394{col 43}{space 1}    0.80{col 52}{space 3}0.425{col 60}{space 4}-.0504955{col 73}{space 3} .1197837
+{txt}{space 16}7  {c |}{col 20}{res}{space 2}-.0130821{col 32}{space 2} .0426839{col 43}{space 1}   -0.31{col 52}{space 3}0.759{col 60}{space 4} -.096741{col 73}{space 3} .0705769
+{txt}{space 16}8  {c |}{col 20}{res}{space 2}  .046244{col 32}{space 2} .0431561{col 43}{space 1}    1.07{col 52}{space 3}0.284{col 60}{space 4}-.0383405{col 73}{space 3} .1308285
+{txt}{space 16}9  {c |}{col 20}{res}{space 2} .0264337{col 32}{space 2} .0433547{col 43}{space 1}    0.61{col 52}{space 3}0.542{col 60}{space 4}-.0585399{col 73}{space 3} .1114073
+{txt}{space 18} {c |}
+{space 10}state_fe {c |}
+{space 16}1  {c |}{col 20}{res}{space 2}-.0603068{col 32}{space 2} .0430195{col 43}{space 1}   -1.40{col 52}{space 3}0.161{col 60}{space 4}-.1446234{col 73}{space 3} .0240099
+{txt}{space 16}2  {c |}{col 20}{res}{space 2}-.0248343{col 32}{space 2} .0438345{col 43}{space 1}   -0.57{col 52}{space 3}0.571{col 60}{space 4}-.1107484{col 73}{space 3} .0610799
+{txt}{space 16}3  {c |}{col 20}{res}{space 2} .0154039{col 32}{space 2}  .043406{col 43}{space 1}    0.35{col 52}{space 3}0.723{col 60}{space 4}-.0696703{col 73}{space 3} .1004782
+{txt}{space 16}4  {c |}{col 20}{res}{space 2} .0221416{col 32}{space 2} .0442555{col 43}{space 1}    0.50{col 52}{space 3}0.617{col 60}{space 4}-.0645976{col 73}{space 3} .1088808
+{txt}{space 16}5  {c |}{col 20}{res}{space 2} -.029166{col 32}{space 2} .0436886{col 43}{space 1}   -0.67{col 52}{space 3}0.504{col 60}{space 4} -.114794{col 73}{space 3}  .056462
+{txt}{space 16}6  {c |}{col 20}{res}{space 2}-.0286951{col 32}{space 2}  .043504{col 43}{space 1}   -0.66{col 52}{space 3}0.510{col 60}{space 4}-.1139614{col 73}{space 3} .0565711
+{txt}{space 16}7  {c |}{col 20}{res}{space 2}-.0203692{col 32}{space 2} .0434761{col 43}{space 1}   -0.47{col 52}{space 3}0.639{col 60}{space 4}-.1055807{col 73}{space 3} .0648424
+{txt}{space 16}8  {c |}{col 20}{res}{space 2}-.0032524{col 32}{space 2} .0434473{col 43}{space 1}   -0.07{col 52}{space 3}0.940{col 60}{space 4}-.0884076{col 73}{space 3} .0819027
+{txt}{space 16}9  {c |}{col 20}{res}{space 2} .0238957{col 32}{space 2} .0436712{col 43}{space 1}    0.55{col 52}{space 3}0.584{col 60}{space 4}-.0616982{col 73}{space 3} .1094896
+{txt}{space 18} {c |}
+{space 13}_cons {c |}{col 20}{res}{space 2} 2.181075{col 32}{space 2} .0515338{col 43}{space 1}   42.32{col 52}{space 3}0.000{col 60}{space 4}  2.08007{col 73}{space 3} 2.282079
+{txt}{hline 19}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. capture drop p_actual
+{txt}
+{com}. predict p_actual
+{txt}(option {bf:pr} assumed; Pr(ipo_dummy))
+(92,682 missing values generated)
+
+{com}. keep if e(sample)
+{txt}(92,682 observations deleted)
+
+{com}. 
+. g K_actual = K_total
+{txt}
+{com}. 
+. g K_nojobs=K_total
+{txt}
+{com}. replace K_nojobs= K_er + K_404 + K_sd if ///
+> year>=2012 & year<=2018 & publicfloat_mil>=75 & publicfloat_mil<700 
+{txt}(7,428 real changes made)
+
+{com}. replace K_nojobs= K_er if ///
+> year>=2012 & year<=2018 & publicfloat_mil>=0 & publicfloat_mil<75 
+{txt}(33,460 real changes made)
+
+{com}. replace ln_K_total = log(K_nojobs)
+{txt}(115,640 real changes made, 10,867 to missing)
+
+{com}. predict p_nojobs
+{txt}(option {bf:pr} assumed; Pr(ipo_dummy))
+(10,867 missing values generated)
+
+{com}. 
+. g K_nosox=K_total
+{txt}
+{com}. replace K_nosox= K_er + K_sd if ///
+> (year>=2003 & year<=2018 & publicfloat_mil>=700 & publicfloat_mil<.) | ///
+> (year>=2003 & year<=2011 & publicfloat_mil>=75 & publicfloat_mil<700) 
+{txt}(9,331 real changes made)
+
+{com}. replace K_nosox= 1/1000000  if ///
+> (year>=2012 & year<=2018 & publicfloat_mil>=75 & publicfloat_mil<700) 
+{txt}(7,610 real changes made)
+
+{com}. replace ln_K_total = log(K_nosox)
+{txt}(50,401 real changes made, 3,424 to missing)
+
+{com}. predict p_nosox
+{txt}(option {bf:pr} assumed; Pr(ipo_dummy))
+(10,012 missing values generated)
+
+{com}. 
+. g K_zerosd=.
+{txt}(116,703 missing values generated)
+
+{com}. replace K_zerosd= 1/1000000  if ///
+> (year>=2012 & year<=2018 & publicfloat_mil>=0 & publicfloat_mil<700)
+{txt}(44,690 real changes made)
+
+{com}. replace K_zerosd= K_er + K_404  if ///
+> (year>=2003 & year<=2018 & publicfloat_mil>=700 & publicfloat_mil<.) | ///
+> (year>=2003 & year<=2011 & publicfloat_mil>=75 & publicfloat_mil<700) 
+{txt}(9,920 real changes made)
+
+{com}. replace K_zerosd= K_er if ///
+> (year>=1992 & year<=2007 & publicfloat_mil>=0 & publicfloat_mil<25) | ///
+> (year>=2008 & year<=2011 & publicfloat_mil>=0 & publicfloat_mil<75)
+{txt}(46,355 real changes made)
+
+{com}. replace K_zerosd= K_er if ///
+> (year>=1992 & year<=2002 & publicfloat_mil>=25 & publicfloat_mil<.) | ///
+> (year>=2003 & year<=2007 & publicfloat_mil>=25 & publicfloat_mil<75)
+{txt}(15,738 real changes made)
+
+{com}. replace ln_K_total = log(K_zerosd)
+{txt}(101,927 real changes made, 5,710 to missing)
+
+{com}. predict p_zerosd
+{txt}(option {bf:pr} assumed; Pr(ipo_dummy))
+(6,355 missing values generated)
+
+{com}. 
+. g K_noreg=1/1000000
+{txt}
+{com}. replace ln_K_total = log(K_noreg) 
+{txt}(72,013 real changes made)
+
+{com}. predict p_noreg
+{txt}(option {bf:pr} assumed; Pr(ipo_dummy))
+
+{com}. 
+. g K_maxreg=.
+{txt}(116,703 missing values generated)
+
+{com}. *replace K_maxreg = K_er + K_sd
+. replace K_maxreg = K_er + K_sd if ///
+> year>=1992 & year<=2002
+{txt}(29,424 real changes made)
+
+{com}. replace K_maxreg = K_er + K_404 + K_sd if ///
+> year>=2003 & year<=2018
+{txt}(87,279 real changes made)
+
+{com}. replace ln_K_total = log(K_maxreg) 
+{txt}(116,703 real changes made, 349 to missing)
+
+{com}. predict p_maxreg
+{txt}(option {bf:pr} assumed; Pr(ipo_dummy))
+(349 missing values generated)
+
+{com}. 
+. g K_minreg=.
+{txt}(116,703 missing values generated)
+
+{com}. replace K_minreg = K_er  if ///
+> year>=1992 & year<=2011
+{txt}(70,861 real changes made)
+
+{com}. replace K_minreg = 1/1000000 if ///
+> year>=2012 & year<=2018 
+{txt}(45,842 real changes made)
+
+{com}. replace ln_K_total = log(K_minreg) 
+{txt}(113,253 real changes made, 6,793 to missing)
+
+{com}. predict p_minreg
+{txt}(option {bf:pr} assumed; Pr(ipo_dummy))
+(7,104 missing values generated)
+
+{com}. 
+. 
+. foreach x in actual nojobs nosox zerosd noreg minreg maxreg {c -(}
+{txt}  2{com}. g v_`x'=p_`x'*publicfloat_mil
+{txt}  3{com}. {c )-}
+{txt}(10,867 missing values generated)
+(10,012 missing values generated)
+(6,355 missing values generated)
+(7,104 missing values generated)
+(349 missing values generated)
+
+{com}. 
+. g post2000=year>=2000
+{txt}
+{com}. replace K_noreg=K_actual if post2000==0
+{txt}(15,331 real changes made)
+
+{com}. 
+. 
+. drop K_sd K_404 K_egc K_total
+{txt}
+{com}. 
+. foreach var of varlist K_* {c -(}
+{txt}  2{com}. g ratio_`var'=`var'/publicfloat_mil*100
+{txt}  3{com}. {c )-}
+{txt}
+{com}. 
+. 
+. foreach var of varlist p_* v_* {c -(}
+{txt}  2{com}. egen totall_`var'=sum(`var'), by(post2000)
+{txt}  3{com}. egen totyr_`var'=sum(`var'), by(year)
+{txt}  4{com}. {c )-}
+{txt}
+{com}. 
+. 
+. foreach var of varlist p_* {c -(}
+{txt}  2{com}. replace `var'=`var'*100
+{txt}  3{com}. {c )-}
+{txt}(116,703 real changes made)
+(105,836 real changes made)
+(106,691 real changes made)
+(110,348 real changes made)
+(116,703 real changes made)
+(116,354 real changes made)
+(109,599 real changes made)
+
+{com}. 
+. foreach var of varlist totall_v_* totyr_v_* {c -(}
+{txt}  2{com}. replace `var'=`var'/1000
+{txt}  3{com}. {c )-}
+{txt}(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+
+{com}. 
+. 
+. * Counterfactual Simulations
+. collapse K* p_* totyr_p_*, by(year)
+{res}{txt}
+{com}. 
+. foreach x in p totyr_p {c -(}
+{txt}  2{com}. replace `x'_noreg=`x'_actual if year<2000
+{txt}  3{com}. {c )-}
+{txt}(8 real changes made)
+(8 real changes made)
+
+{com}. 
+. twoway ///
+> (line K_actual year, lpattern(solid) lcolor(black) lwidth(medthick) ) || ///
+> (line K_nojobs year, lpattern(dash) lcolor(black)  lwidth(medthick)  ) || ///
+> (line K_nosox year, lpattern(shortdash_dot) lcolor(black) lwidth(medthick) ) || ///
+> (line K_noreg year, lpattern(shortdash) lcolor(black) lwidth(medthick) ), ///
+> graphregion(color(white)) xlabel(1990(5)2020, nogrid) xtitle("") aspectrati(0.55) ///
+> legend(label(1 "Actual Regulations") label(2 "No JOBS Act") label(3 "No SOX 404") label(4 "Zero Regulation") col(2) position(6))
+{res}{txt}
+{com}. graph export $output/Figure7a.png, replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure7a.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. twoway ///
+> (line p_actual year, lpattern(solid) lcolor(black) lwidth(medthick) ) || ///
+> (line p_nojobs year, lpattern(dash) lcolor(black)  lwidth(medthick)  ) || ///
+> (line p_nosox year, lpattern(shortdash_dot) lcolor(black) lwidth(medthick) ) || ///
+> (line p_noreg year, lpattern(shortdash) lcolor(black) lwidth(medthick) ), ///
+> graphregion(color(white)) xlabel(1990(5)2020, nogrid) xtitle("") aspectrati(0.55) ///
+> legend(label(1 "Actual Regulations") label(2 "No JOBS Act") label(3 "No SOX 404") label(4 "Zero Regulation") col(2) position(6))
+{res}{txt}
+{com}. graph export $output/Figure7b.png, replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure7b.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. twoway ///
+> (line totyr_p_actual year, lpattern(solid) lcolor(black) lwidth(medthick) ) || ///
+> (line totyr_p_nojobs year, lpattern(dash) lcolor(black)  lwidth(medthick)  ) || ///
+> (line totyr_p_nosox year, lpattern(shortdash_dot) lcolor(black) lwidth(medthick) ) || ///
+> (line totyr_p_noreg year, lpattern(shortdash) lcolor(black) lwidth(medthick) ), ///
+> graphregion(color(white)) xlabel(1990(5)2020, nogrid) xtitle("") aspectrati(0.55) ///
+> legend(label(1 "Actual Regulations") label(2 "No JOBS Act") label(3 "No SOX 404") label(4 "Zero Regulation") col(2) position(6))
+{res}{txt}
+{com}. graph export $output/Figure7c.png, replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Figure7c.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+{txt}end of do-file
+
+{com}. 
+. 
+. ***********
+. * Table 1
+. ***********
+. /*Based on regulations, no data involved */
+. *Table1a.tex
+. *Table1b.tex
+. 
+. 
+. ***********
+. * Table 2
+. ***********
+. do Table2.do
+{txt}
+{com}. *************************************
+. *Replication code for Ewens Xiao and Xu 2023
+. *************************************
+. ***********
+. * Table 2
+. ***********
+. 
+. use $input/Table2, clear
+{txt}
+{com}. 
+. foreach x in 25 75 700 {c -(}
+{txt}  2{com}. g treat_below_`x'mil = treat_`x'mil*below_`x'mil
+{txt}  3{com}. {c )-}
+{txt}(195,875 missing values generated)
+(136,935 missing values generated)
+(213,138 missing values generated)
+
+{com}. 
+. label var lev_bk "Book leverage"
+{txt}
+{com}. label var investratio1 "Investment1"
+{txt}
+{com}. label var investratio2 "Investment2"
+{txt}
+{com}. label var investratio3 "Investment3"
+{txt}
+{com}. label var publicown "Non-aff. own."
+{txt}
+{com}. label var treat_below_25mil "Below $25m x Bunching years"
+{txt}
+{com}. label var treat_below_75mil "Below $75m x Bunching years"
+{txt}
+{com}. label var treat_below_700mil "Below $700m x Bunching years"
+{txt}
+{com}. 
+. global margins lev_bk investratio1 investratio2 investratio3 publicown
+{txt}
+{com}. 
+. 
+. eststo clear
+{txt}
+{com}. foreach x of varlist $margins {c -(}
+{txt}  2{com}. 
+. qui ivreghdfe `x'  treat_below_25mil treat_25mil below_25mil (L_`x'=L2_`x')  if samp_25mil & abs(publicfloat_mil-25)<=5, absorb(sic3 fyear) cluster(sic3 fyear) partial(treat_25mil below_25mil)
+{txt}  3{com}. qui sum `x' if e(sample)
+{txt}  4{com}. qui estadd local ymean=round(r(mean), 0.001)
+{txt}  5{com}. qui estadd local FE "Yes"
+{txt}  6{com}. eststo
+{txt}  7{com}. {c )-}
+{txt}({res}est1{txt} stored)
+{err}Warning: estimated covariance matrix of moment conditions not of full rank.
+         overidentification statistic not reported, and standard errors and
+         model tests should be interpreted with caution.
+Possible causes:
+         number of clusters insufficient to calculate robust covariance matrix
+         singleton dummy variable (dummy with one 1 and N-1 0s or vice versa)
+{help ivreg2##partial:partial} option may address problem.
+{txt}({res}est2{txt} stored)
+{err}Warning: estimated covariance matrix of moment conditions not of full rank.
+         overidentification statistic not reported, and standard errors and
+         model tests should be interpreted with caution.
+Possible causes:
+         number of clusters insufficient to calculate robust covariance matrix
+         singleton dummy variable (dummy with one 1 and N-1 0s or vice versa)
+{help ivreg2##partial:partial} option may address problem.
+{txt}({res}est3{txt} stored)
+({res}est4{txt} stored)
+({res}est5{txt} stored)
+
+{com}. esttab using "$output/Table2.csv", mtitles("Book leverage" "Investment1" "Investment2" "Investment3" "Non-aff. own.") title(Panel A) stats(FE N ymean, label("Year FE and SIC3 FE" "N" "Mean of dep. var.") fmt(0 %9.0f %9.3f)) star(* 0.1 ** 0.05 *** 0.01) b(3) se(3) label nonotes nogap br mtitle keep(treat_below_*) replace
+{res}{txt}(output written to {browse  `"F:/Dropbox/bunching_JOBS/JFE_replication/output/Table2.csv"'})
+
+{com}. 
+. 
+. eststo clear
+{txt}
+{com}. foreach x of varlist $margins {c -(}
+{txt}  2{com}. qui ivreghdfe `x'  treat_below_75mil treat_75mil below_75mil  (L_`x'=L2_`x') if samp_75mil & abs(publicfloat_mil-75)<=15, absorb(sic3 fyear) cluster(sic3 fyear) partial(treat_75mil below_75mil)
+{txt}  3{com}. qui sum `x' if e(sample) 
+{txt}  4{com}. qui estadd local ymean=round(r(mean), 0.001)
+{txt}  5{com}. qui estadd local FE "Yes"
+{txt}  6{com}. eststo
+{txt}  7{com}. {c )-}
+{txt}({res}est1{txt} stored)
+({res}est2{txt} stored)
+({res}est3{txt} stored)
+({res}est4{txt} stored)
+({res}est5{txt} stored)
+
+{com}. esttab using "$output/Table2.csv", mtitles("Book leverage" "Investment1" "Investment2" "Investment3" "Non-aff. own.") title(Panel B) stats(FE N ymean, label("Year FE and SIC3 FE" "N" "Mean of dep. var.") fmt(0 %9.0f %9.3f)) star(* 0.1 ** 0.05 *** 0.01) b(3) se(3) label nonotes nogap br mtitle keep(treat_below_*) append
+{res}{txt}(output written to {browse  `"F:/Dropbox/bunching_JOBS/JFE_replication/output/Table2.csv"'})
+
+{com}. 
+. 
+. eststo clear
+{txt}
+{com}. foreach x of varlist $margins {c -(}
+{txt}  2{com}. qui ivreghdfe `x'  treat_below_700mil treat_700mil below_700mil  (L_`x'=L2_`x')  if samp_700mil & abs(publicfloat_mil-700)<=100, absorb(sic3 fyear) cluster(sic3 fyear) partial(treat_700mil below_700mil)
+{txt}  3{com}. qui sum `x' if e(sample)
+{txt}  4{com}. qui estadd local ymean=round(r(mean), 0.001)
+{txt}  5{com}. qui estadd local FE "Yes"
+{txt}  6{com}. eststo
+{txt}  7{com}. {c )-}
+{err}Warning: estimated covariance matrix of moment conditions not of full rank.
+         overidentification statistic not reported, and standard errors and
+         model tests should be interpreted with caution.
+Possible causes:
+         number of clusters insufficient to calculate robust covariance matrix
+         singleton dummy variable (dummy with one 1 and N-1 0s or vice versa)
+{help ivreg2##partial:partial} option may address problem.
+{txt}({res}est1{txt} stored)
+({res}est2{txt} stored)
+({res}est3{txt} stored)
+({res}est4{txt} stored)
+({res}est5{txt} stored)
+
+{com}. esttab using "$output/Table2.csv", mtitles("Book leverage" "Investment1" "Investment2" "Investment3" "Non-aff. own.") title(Panel C) stats(FE N ymean, label("Year FE and SIC3 FE" "N" "Mean of dep. var.") fmt(0 %9.0f %9.3f)) star(* 0.1 ** 0.05 *** 0.01) b(3) se(3) label nonotes nogap br mtitle keep(treat_below_*) append
+{res}{txt}(output written to {browse  `"F:/Dropbox/bunching_JOBS/JFE_replication/output/Table2.csv"'})
+
+{com}. 
+. 
+{txt}end of do-file
+
+{com}. 
+. 
+. ***********
+. * Table 3
+. ***********
+. * Table3.m
+. 
+. 
+. ***********
+. * Table 4
+. ***********
+. do Table4.do
+{txt}
+{com}. *************************************
+. *Replication code for Ewens Xiao and Xu 2023
+. *************************************
+. ****************
+. * Table 4
+. ****************
+. eststo clear
+{txt}
+{com}. 
+. use $input/sample_25m, clear
+{txt}
+{com}. collapse (median) at ebitda ni if treat==1 & (publicfloat_mil>=27  & publicfloat_mil<=33)
+{res}{txt}
+{com}. g threshold="$25m"
+{txt}
+{com}. g regulation="Scaled disclosure"
+{txt}
+{com}. g k=0.022
+{txt}
+{com}. foreach x in at ebitda ni {c -(}
+{txt}  2{com}. g k2`x'=0.022/`x'
+{txt}  3{com}. {c )-}
+{txt}
+{com}. save $output/T4_25, replace
+{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T4_25.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T4_25.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. use $input/sample_75m, clear
+{txt}
+{com}. collapse (median) at ebitda ni if treat==1 & (publicfloat_mil>=95 & publicfloat_mil<=105)
+{res}{txt}
+{com}. g threshold="$75m"
+{txt}
+{com}. g regulation="SOX 404 + filign delay"
+{txt}
+{com}. g k=0.132
+{txt}
+{com}. foreach x in at ebitda ni {c -(}
+{txt}  2{com}. g k2`x'=k/`x'
+{txt}  3{com}. {c )-}
+{txt}
+{com}. save $output/T4_75, replace
+{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T4_75.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T4_75.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. use $input/sample_700m, clear
+{txt}
+{com}. collapse (median) at ebitda ni if treat==1 & (publicfloat_mil>=840 & publicfloat_mil<=1000)
+{res}{txt}
+{com}. g threshold="$700m"
+{txt}
+{com}. g regulation="EGC benefits"
+{txt}
+{com}. g k=0.873
+{txt}
+{com}. foreach x in at ebitda ni {c -(}
+{txt}  2{com}. g k2`x'=k/`x'
+{txt}  3{com}. {c )-}
+{txt}
+{com}. save $output/T4_700, replace
+{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T4_700.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T4_700.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. clear
+{txt}
+{com}. append using $output/T4_25
+{txt}
+{com}. append using $output/T4_75
+{txt}{p 0 7 2}
+(variable
+{bf:regulation} was {bf:str17}, now {bf:str22} to accommodate using data's values)
+{p_end}
+
+{com}. append using $output/T4_700
+{txt}{p 0 7 2}
+(variable
+{bf:threshold} was {bf:str4}, now {bf:str5} to accommodate using data's values)
+{p_end}
+
+{com}. 
+. order threshold k 
+{txt}
+{com}. label var threshold "Threshold"
+{txt}
+{com}. label var k "Regulatory costs (k)"
+{txt}
+{com}. label var regulation "Identified regulations"
+{txt}
+{com}. label var at "Total assets"
+{txt}
+{com}. label var ebitda "EBITDA"
+{txt}
+{com}. label var ni "Net income"
+{txt}
+{com}. label var k2at "k/Total assets"
+{txt}
+{com}. label var k2ebitda "k/EBITDA"
+{txt}
+{com}. label var k2ni "k/Net income"
+{txt}
+{com}. 
+. foreach x of varlist at ebitda ni {c -(}
+{txt}  2{com}.         replace `x'=round(`x', 0.01)
+{txt}  3{com}.         format `x' %6.2f
+{txt}  4{com}. {c )-}
+{txt}(0 real changes made)
+(0 real changes made)
+(0 real changes made)
+
+{com}. 
+. foreach x of varlist k2at k2ebitda k2ni {c -(}
+{txt}  2{com}.         replace `x'=100*round(`x', 0.0001)
+{txt}  3{com}.         tostring `x', replace force
+{txt}  4{com}.         replace `x'=`x'+"%"
+{txt}  5{com}. {c )-}
+{txt}(3 real changes made)
+k2at was {res:double} now {res:str5}
+k2at was forced to string; some loss of information
+variable {bf}{res}k2at{sf}{txt} was {bf}{res}str5{sf}{txt} now {bf}{res}str6{sf}
+{txt}(3 real changes made)
+(3 real changes made)
+k2ebitda was {res:double} now {res:str4}
+k2ebitda was forced to string; some loss of information
+variable {bf}{res}k2ebitda{sf}{txt} was {bf}{res}str4{sf}{txt} now {bf}{res}str5{sf}
+{txt}(3 real changes made)
+(3 real changes made)
+k2ni was {res:double} now {res:str5}
+variable {bf}{res}k2ni{sf}{txt} was {bf}{res}str5{sf}{txt} now {bf}{res}str6{sf}
+{txt}(3 real changes made)
+
+{com}. 
+. capture erase $output/T4_25.dta
+{txt}
+{com}. capture erase $output/T4_75.dta
+{txt}
+{com}. capture erase $output/T4_700.dta
+{txt}
+{com}. 
+. export excel using "$output/Table4.xlsx", firstrow(variables) keepcellfmt replace
+{res}{txt}file {bf:F:/Dropbox/bunching_JOBS/JFE_replication/output/Table4.xlsx} saved
+
+{com}. /*Transpose the Excel table for the final format*/
+. 
+. 
+. 
+{txt}end of do-file
+
+{com}. 
+. 
+. ***********
+. * Table 5
+. ***********
+. /* First, 
+> run Matlab code Table5a.m, which outputs heterogeneity_local_res3.xlsx into $output
+> run Matlab code Table5b.m, which outputs heterogeneity_local_time.xlsx into $output
+> */
+. do Table5.do
+{txt}
+{com}. *************************************
+. *Replication code for Ewens Xiao and Xu 2023
+. *************************************
+. ****************
+. * Table 5
+. ****************
+. 
+. * Panel A
+. **********
+. /*
+> First, 
+> run Matlab code Table5a.m, which outputs heterogeneity_local_res.xlsx into $output
+> run Matlab code Table5b.m, which outputs heterogeneity_local_time.xlsx into $output
+> */
+. 
+. import excel "$output/heterogeneity_local_time.xlsx", sheet("Sheet1") clear
+{res}{text}(6 vars, 2 obs)
+
+{com}. save $output/temp, replace
+{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/temp.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/temp.dta{rm}
+saved
+{p_end}
+
+{com}. import excel "$output/heterogeneity_local_res.xlsx", sheet("Sheet1") clear
+{res}{text}(6 vars, 18 obs)
+
+{com}. append using $output/temp
+{txt}
+{com}. 
+. rename (A-F) (k_25 k_75 k_700 k2pv_25 k2pv_75 k2pv_700)
+{res}{txt}
+{com}. drop if _n==13 | _n==14
+{txt}(2 observations deleted)
+
+{com}. g sample=""
+{txt}(18 missing values generated)
+
+{com}. order sample
+{txt}
+{com}. replace sample="Low Tobin's Q" if _n==1
+{txt}variable {bf}{res}sample{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str13{sf}
+{txt}(1 real change made)
+
+{com}. replace sample="High Tobin's Q" if _n==2
+{txt}variable {bf}{res}sample{sf}{txt} was {bf}{res}str13{sf}{txt} now {bf}{res}str14{sf}
+{txt}(1 real change made)
+
+{com}. replace sample="Low tangibility" if _n==3
+{txt}variable {bf}{res}sample{sf}{txt} was {bf}{res}str14{sf}{txt} now {bf}{res}str15{sf}
+{txt}(1 real change made)
+
+{com}. replace sample="High tangibility" if _n==4
+{txt}variable {bf}{res}sample{sf}{txt} was {bf}{res}str15{sf}{txt} now {bf}{res}str16{sf}
+{txt}(1 real change made)
+
+{com}. replace sample="Low HP competition" if _n==5
+{txt}variable {bf}{res}sample{sf}{txt} was {bf}{res}str16{sf}{txt} now {bf}{res}str18{sf}
+{txt}(1 real change made)
+
+{com}. replace sample="High HP competition" if _n==6
+{txt}variable {bf}{res}sample{sf}{txt} was {bf}{res}str18{sf}{txt} now {bf}{res}str19{sf}
+{txt}(1 real change made)
+
+{com}. replace sample="Non-manufac." if _n==7
+{txt}(1 real change made)
+
+{com}. replace sample="Manufac." if _n==8
+{txt}(1 real change made)
+
+{com}. replace sample="Non-fin. or utility" if _n==9
+{txt}(1 real change made)
+
+{com}. replace sample="Fin & utility" if _n==10
+{txt}(1 real change made)
+
+{com}. replace sample="Low ROA" if _n==11
+{txt}(1 real change made)
+
+{com}. replace sample="High ROA" if _n==12
+{txt}(1 real change made)
+
+{com}. replace sample="Low cash ratio" if _n==13
+{txt}(1 real change made)
+
+{com}. replace sample="High cash ratio" if _n==14
+{txt}(1 real change made)
+
+{com}. replace sample="Low turnover" if _n==15
+{txt}(1 real change made)
+
+{com}. replace sample="High turnover" if _n==16
+{txt}(1 real change made)
+
+{com}. replace sample="Early sample period" if _n==17
+{txt}(1 real change made)
+
+{com}. replace sample="Late sample period" if _n==18
+{txt}(1 real change made)
+
+{com}. 
+. *add results from Table 3 as first row
+. insobs 1, before(1)
+{txt}(1 observation added)
+
+{com}. replace sample="Baseline" if _n==1
+{txt}(1 real change made)
+
+{com}. replace k_25=0.022 if _n==1
+{txt}(1 real change made)
+
+{com}. replace k_75=0.132 if _n==1
+{txt}(1 real change made)
+
+{com}. replace k_700=0.873 if _n==1
+{txt}(1 real change made)
+
+{com}. replace k2pv_25=1.205 if _n==1
+{txt}(1 real change made)
+
+{com}. replace k2pv_75=1.841 if _n==1
+{txt}(1 real change made)
+
+{com}. replace k2pv_700=1.164 if _n==1
+{txt}(1 real change made)
+
+{com}. 
+. preserve
+{txt}
+{com}.         foreach x of varlist k_* k2pv_* {c -(}
+{txt}  2{com}.                 replace `x'=round(`x', 0.001)
+{txt}  3{com}.         {c )-}
+{txt}(18 real changes made)
+(18 real changes made)
+(18 real changes made)
+(18 real changes made)
+(18 real changes made)
+(18 real changes made)
+
+{com}.         format k_* k2pv_* %5.3f
+{txt}
+{com}.         export excel using "$output/Table5a.xlsx", firstrow(variables) keepcellfmt replace
+{res}{txt}file {bf:F:/Dropbox/bunching_JOBS/JFE_replication/output/Table5a.xlsx} saved
+
+{com}. restore
+{txt}
+{com}. save "$output/Table5a", replace
+{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Table5a.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Table5a.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. * Panel B
+. **********
+. 
+. * Kappa
+. global covariates tq ppe hp_tsimm sic_manufac sic_finutil roa cashratio turnover
+{txt}
+{com}. 
+. foreach samp in 25 75 700 {c -(}
+{txt}  2{com}. use $input/res_`samp'mil, clear
+{txt}  3{com}. qui {c -(}
+{txt}  4{com}.         rename _all, lower
+{txt}  5{com}.         drop res_lnfloat
+{txt}  6{com}.         matrix A=(0)
+{txt}  7{com}.         foreach x in $covariates {c -(}
+{txt}  8{com}. 
+.         qui: sum res_`x', det
+{txt}  9{com}.         qui: g byte abovemed_`x'=res_`x'>=r(p50) if res_`x'!=.
+{txt} 10{com}. 
+.         tabstat res_`x', by(abovemed_`x') stat(mean) col(stat) save
+{txt} 11{com}. 
+.         matrix list r(Stat1)
+{txt} 12{com}.         matrix list r(Stat2)
+{txt} 13{com}. 
+.         matrix A=A\r(Stat1)\r(Stat2)
+{txt} 14{com}.         {c )-}
+{txt} 15{com}. {c )-}
+{txt} 16{com}. matrix list A
+{txt} 17{com}. clear
+{txt} 18{com}. svmat A, names(covmean)
+{txt} 19{com}. rename covmean1 covmean_`samp'
+{txt} 20{com}. drop if _n==1
+{txt} 21{com}. g id=_n
+{txt} 22{com}. save $output/T5b_covmean_`samp', replace
+{txt} 23{com}. {c )-}
+{res}
+{txt}A[17,1]
+             c1
+  r1 {res}         0
+{txt}Mean {res} 1.4398422
+{txt}Mean {res} 6.5361891
+{txt}Mean {res} 1.9583333
+{txt}Mean {res} 7.0756579
+{txt}Mean {res} 1.5030426
+{txt}Mean {res} 6.5759768
+{txt}Mean {res} 1.5120968
+{txt}Mean {res} 6.4302326
+{txt}Mean {res} 1.5178197
+{txt}Mean {res} 6.5813296
+{txt}Mean {res} 1.9862543
+{txt}Mean {res} 7.0813953
+{txt}Mean {res} 1.9675214
+{txt}Mean {res} 6.9081803
+{txt}Mean {res} 1.9965157
+{txt}Mean {res} 6.9983607
+{reset}number of observations will be reset to 17
+Press any key to continue, or Break to abort
+{p}
+Number of observations ({bf:_N}) was 0,
+now 17.
+{p_end}
+{res}{txt}(1 observation deleted)
+{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T5b_covmean_25.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T5b_covmean_25.dta{rm}
+saved
+{p_end}
+{res}
+{txt}A[17,1]
+             c1
+  r1 {res}         0
+{txt}Mean {res} 1.4816698
+{txt}Mean {res} 6.5035998
+{txt}Mean {res} 1.9776659
+{txt}Mean {res} 6.9945498
+{txt}Mean {res} 2.0131377
+{txt}Mean {res} 6.9773272
+{txt}Mean {res}  1.491018
+{txt}Mean {res} 6.4812044
+{txt}Mean {res} 2.0002235
+{txt}Mean {res} 6.9732849
+{txt}Mean {res} 2.0098966
+{txt}Mean {res} 6.9657044
+{txt}Mean {res} 1.9766879
+{txt}Mean {res} 7.0026047
+{txt}Mean {res} 1.4677681
+{txt}Mean {res} 6.4968876
+{reset}number of observations will be reset to 17
+Press any key to continue, or Break to abort
+{p}
+Number of observations ({bf:_N}) was 0,
+now 17.
+{p_end}
+{res}{txt}(1 observation deleted)
+{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T5b_covmean_75.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T5b_covmean_75.dta{rm}
+saved
+{p_end}
+{res}
+{txt}A[17,1]
+             c1
+  r1 {res}         0
+{txt}Mean {res} 1.9947712
+{txt}Mean {res} 7.0621891
+{txt}Mean {res} 1.5022693
+{txt}Mean {res} 6.5198238
+{txt}Mean {res} 1.9844761
+{txt}Mean {res}  6.968593
+{txt}Mean {res} 1.5341615
+{txt}Mean {res} 6.5243243
+{txt}Mean {res} 2.1309042
+{txt}Mean {res} 7.0144928
+{txt}Mean {res} 1.9894875
+{txt}Mean {res} 6.9764851
+{txt}Mean {res} 1.9825269
+{txt}Mean {res} 6.9587879
+{txt}Mean {res} 1.4119497
+{txt}Mean {res} 6.4898178
+{reset}number of observations will be reset to 17
+Press any key to continue, or Break to abort
+{p}
+Number of observations ({bf:_N}) was 0,
+now 17.
+{p_end}
+{res}{txt}(1 observation deleted)
+{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T5b_covmean_700.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T5b_covmean_700.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. use $output/T5b_covmean_25, clear
+{txt}
+{com}. foreach samp in 75 700 {c -(}
+{txt}  2{com}. merge 1:1 id using $output/T5b_covmean_`samp', nogen
+{txt}  3{com}. {c )-}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              16{txt}  
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              16{txt}  
+{col 5}{hline 41}
+
+{com}. order id
+{txt}
+{com}. g sample=""
+{txt}(16 missing values generated)
+
+{com}. order sample
+{txt}
+{com}. replace sample="Low Tobin's Q" if _n==1
+{txt}variable {bf}{res}sample{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str13{sf}
+{txt}(1 real change made)
+
+{com}. replace sample="High Tobin's Q" if _n==2
+{txt}variable {bf}{res}sample{sf}{txt} was {bf}{res}str13{sf}{txt} now {bf}{res}str14{sf}
+{txt}(1 real change made)
+
+{com}. replace sample="Low tangibility" if _n==3
+{txt}variable {bf}{res}sample{sf}{txt} was {bf}{res}str14{sf}{txt} now {bf}{res}str15{sf}
+{txt}(1 real change made)
+
+{com}. replace sample="High tangibility" if _n==4
+{txt}variable {bf}{res}sample{sf}{txt} was {bf}{res}str15{sf}{txt} now {bf}{res}str16{sf}
+{txt}(1 real change made)
+
+{com}. replace sample="Low HP competition" if _n==5
+{txt}variable {bf}{res}sample{sf}{txt} was {bf}{res}str16{sf}{txt} now {bf}{res}str18{sf}
+{txt}(1 real change made)
+
+{com}. replace sample="High HP competition" if _n==6
+{txt}variable {bf}{res}sample{sf}{txt} was {bf}{res}str18{sf}{txt} now {bf}{res}str19{sf}
+{txt}(1 real change made)
+
+{com}. replace sample="Non-manufac." if _n==7
+{txt}(1 real change made)
+
+{com}. replace sample="Manufac." if _n==8
+{txt}(1 real change made)
+
+{com}. replace sample="Non-fin. or utility" if _n==9
+{txt}(1 real change made)
+
+{com}. replace sample="Fin & utility" if _n==10
+{txt}(1 real change made)
+
+{com}. replace sample="Low ROA" if _n==11
+{txt}(1 real change made)
+
+{com}. replace sample="High ROA" if _n==12
+{txt}(1 real change made)
+
+{com}. replace sample="Low cash ratio" if _n==13
+{txt}(1 real change made)
+
+{com}. replace sample="High cash ratio" if _n==14
+{txt}(1 real change made)
+
+{com}. replace sample="Low turnover" if _n==15
+{txt}(1 real change made)
+
+{com}. replace sample="High turnover" if _n==16
+{txt}(1 real change made)
+
+{com}. 
+. capture erase $output/T5b_covmean_25.dta
+{txt}
+{com}. capture erase $output/T5b_covmean_75.dta
+{txt}
+{com}. capture erase $output/T5b_covmean_700.dta
+{txt}
+{com}. 
+. merge 1:1 sample using $output/Table5a, nogen keep(3)
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              16{txt}  
+{col 5}{hline 41}
+
+{com}. sort id
+{txt}
+{com}. drop id k2pv*
+{txt}
+{com}. foreach x in 25 75 700 {c -(}
+{txt}  2{com}.         g kappa_`x'=ln(k_`x'/k_`x'[_n-1])/(covmean_`x'-covmean_`x'[_n-1]) if mod(_n, 2)==0
+{txt}  3{com}. {c )-}
+{txt}(8 missing values generated)
+(8 missing values generated)
+(8 missing values generated)
+
+{com}. keep if kappa_25!=.
+{txt}(8 observations deleted)
+
+{com}. keep sample kappa_*
+{txt}
+{com}. insobs 1, before(1)
+{txt}(1 observation added)
+
+{com}. g covariate=subinstr(sample, "High ", "", .)
+{txt}(1 missing value generated)
+
+{com}. drop sample
+{txt}
+{com}. order covariate
+{txt}
+{com}. replace covariate="Tangibility" if covariate=="tangibility"
+{txt}(1 real change made)
+
+{com}. replace covariate="Cash ratio" if covariate=="cash ratio"
+{txt}(1 real change made)
+
+{com}. replace covariate="Turnover" if covariate=="turnover"
+{txt}(1 real change made)
+
+{com}. replace covariate="Ln(public float)" if covariate==""
+{txt}variable {bf}{res}covariate{sf}{txt} was {bf}{res}str14{sf}{txt} now {bf}{res}str16{sf}
+{txt}(1 real change made)
+
+{com}. /*cost-float elasticity estimates from Table A.5*/
+. replace kappa_25=0.412 if kappa_25==.
+{txt}(1 real change made)
+
+{com}. replace kappa_75=0.456 if kappa_75==.
+{txt}(1 real change made)
+
+{com}. replace kappa_700=0.423 if kappa_700==.
+{txt}(1 real change made)
+
+{com}. save $output/Table5b_kappa, replace
+{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Table5b_kappa.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Table5b_kappa.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. * Covariate value for marginal firms
+. use $input/sample_25m if treat==1 & publicfloat_mil>=27  & publicfloat_mil<=33, clear
+{txt}
+{com}. collapse (median) tq ppe hp_tsimm (mean) sic_manufac sic_finutil  (median) roa cashratio turnover
+{res}{txt}
+{com}. g threshold=25
+{txt}
+{com}. g lnfloat=ln(26.869*1000000)
+{txt}
+{com}. save $output/T5b_25, replace
+{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T5b_25.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T5b_25.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. use $input/sample_75m if treat==1 & publicfloat_mil>=95 & publicfloat_mil<=105, clear
+{txt}
+{com}. collapse (median) tq ppe hp_tsimm (mean) sic_manufac sic_finutil  (median) roa cashratio turnover
+{res}{txt}
+{com}. g threshold=75
+{txt}
+{com}. g lnfloat=ln(94.524*1000000)
+{txt}
+{com}. save $output/T5b_75, replace
+{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T5b_75.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T5b_75.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. use $input/sample_700m if treat==1 & (publicfloat_mil>=840 & publicfloat_mil<=1000), clear
+{txt}
+{com}. collapse (median) tq ppe hp_tsimm (mean) sic_manufac sic_finutil (median) roa cashratio turnover
+{res}{txt}
+{com}. g threshold=700
+{txt}
+{com}. g lnfloat=ln(833.416*1000000)
+{txt}
+{com}. save $output/T5b_700, replace
+{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T5b_700.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/T5b_700.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. clear
+{txt}
+{com}. append using $output/T5b_25
+{txt}
+{com}. append using $output/T5b_75
+{txt}
+{com}. append using $output/T5b_700
+{txt}
+{com}. order threshold lnfloat 
+{txt}
+{com}. xpose, clear
+{txt}
+{com}. drop if _n==1
+{txt}(1 observation deleted)
+
+{com}. rename (v1 v2 v3) (x_25 x_75 x_700)
+{res}{txt}
+{com}. g id=_n
+{txt}
+{com}. save $output/Table5b_x, replace
+{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Table5b_x.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Table5b_x.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. capture erase $output/T5b_25.dta
+{txt}
+{com}. capture erase $output/T5b_75.dta
+{txt}
+{com}. capture erase $output/T5b_700.dta
+{txt}
+{com}. 
+. 
+. use $output/Table5b_kappa, clear
+{txt}
+{com}. g id=_n
+{txt}
+{com}. merge 1:1 id using $output/Table5b_x, nogen
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}               9{txt}  
+{col 5}{hline 41}
+
+{com}. drop id
+{txt}
+{com}. 
+. foreach x of varlist kappa_* x_* {c -(}
+{txt}  2{com}.         replace `x'=round(`x', 0.001)
+{txt}  3{com}. {c )-}
+{txt}(9 real changes made)
+(8 real changes made)
+(8 real changes made)
+(3 real changes made)
+(3 real changes made)
+(3 real changes made)
+
+{com}. format kappa_* x_* %5.3f
+{txt}
+{com}. save $output/Table5b, replace
+{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Table5b.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/Table5b.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. * import bootstrapped estimates and compute std errors
+. forv x=1/3 {c -(}
+{txt}  2{com}.         if `x'==1 {c -(}
+{txt}  3{com}.         local y=25
+{txt}  4{com}.         {c )-}
+{txt}  5{com}.         if `x'==2 {c -(}
+{txt}  6{com}.         local y=75 
+{txt}  7{com}.         {c )-}
+{txt}  8{com}.         if `x'==3 {c -(}
+{txt}  9{com}.         local y=700
+{txt} 10{com}.         {c )-}
+{txt} 11{com}. 
+.         import excel "$input/bootstrap_`x'.csv", sheet("Sheet1") clear
+{txt} 12{com}.         g replication=_n
+{txt} 13{com}.         rename (A-R) k#, addnumber
+{txt} 14{com}.         rename (S-AJ) v#, addnumber
+{txt} 15{com}.         rename AK k`y'_marginal
+{txt} 16{com}.         g k`y'tq=(ln(k1/k2))/(v1-v2)
+{txt} 17{com}.         g k`y'ppe=(ln(k3/k4))/(v3-v4)
+{txt} 18{com}.         g k`y'hp_tsimm=(ln(k5/k6))/(v5-v6)
+{txt} 19{com}.         g k`y'sic_manufac=(ln(k7/k8))/(v7-v8)
+{txt} 20{com}.         g k`y'sic_finutil=(ln(k9/k10))/(v9-v10)
+{txt} 21{com}.         g k`y'roa=(ln(k11/k12))/(v11-v12)
+{txt} 22{com}.         g k`y'lnfloat=(ln(k13/k14))/(v13-v14)
+{txt} 23{com}.         g k`y'cashratio=(ln(k15/k16))/(v15-v16)
+{txt} 24{com}.         g k`y'turnover=(ln(k17/k18))/(v17-v18)
+{txt} 25{com}.         drop k1-v18
+{txt} 26{com}.         save $input/bootstrap_`x', replace
+{txt} 27{com}. {c )-}
+{res}{text}(37 vars, 500 obs)
+{res}{txt}(147 missing values generated)
+(81 missing values generated)
+(146 missing values generated)
+(88 missing values generated)
+(119 missing values generated)
+(119 missing values generated)
+(103 missing values generated)
+(72 missing values generated)
+(72 missing values generated)
+{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/input/bootstrap_1.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/input/bootstrap_1.dta{rm}
+saved
+{p_end}
+{res}{text}(37 vars, 500 obs)
+{res}{txt}(9 missing values generated)
+(78 missing values generated)
+(9 missing values generated)
+(42 missing values generated)
+(13 missing values generated)
+(33 missing values generated)
+(4 missing values generated)
+(19 missing values generated)
+(15 missing values generated)
+{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/input/bootstrap_2.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/input/bootstrap_2.dta{rm}
+saved
+{p_end}
+{res}{text}(37 vars, 500 obs)
+{res}{txt}(47 missing values generated)
+(101 missing values generated)
+(28 missing values generated)
+(26 missing values generated)
+(35 missing values generated)
+(140 missing values generated)
+(225 missing values generated)
+(27 missing values generated)
+(61 missing values generated)
+{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/input/bootstrap_3.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/input/bootstrap_3.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. use $input/bootstrap_1, clear
+{txt}
+{com}. merge 1:1 replication using $input/bootstrap_2, nogen
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             500{txt}  
+{col 5}{hline 41}
+
+{com}. merge 1:1 replication using $input/bootstrap_3, nogen
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             500{txt}  
+{col 5}{hline 41}
+
+{com}. mdesc
+
+{txt}    Variable{col 17}{c |}     Missing          Total     Percent Missing
+{hline 16}{c +}{hline 47}
+   k25_marginal{col 17}{c |} {res}          0            500           0.00
+    {txt}replication{col 17}{c |} {res}          0            500           0.00
+          {txt}k25tq{col 17}{c |} {res}        147            500          29.40
+         {txt}k25ppe{col 17}{c |} {res}         81            500          16.20
+    {txt}k25hp_tsimm{col 17}{c |} {res}        146            500          29.20
+   {txt}k25sic_man~c{col 17}{c |} {res}         88            500          17.60
+   {txt}k25sic_fin~l{col 17}{c |} {res}        119            500          23.80
+         {txt}k25roa{col 17}{c |} {res}        119            500          23.80
+     {txt}k25lnfloat{col 17}{c |} {res}        103            500          20.60
+   {txt}k25cashratio{col 17}{c |} {res}         72            500          14.40
+    {txt}k25turnover{col 17}{c |} {res}         72            500          14.40
+   {txt}k75_marginal{col 17}{c |} {res}          0            500           0.00
+          {txt}k75tq{col 17}{c |} {res}          9            500           1.80
+         {txt}k75ppe{col 17}{c |} {res}         78            500          15.60
+    {txt}k75hp_tsimm{col 17}{c |} {res}          9            500           1.80
+   {txt}k75sic_man~c{col 17}{c |} {res}         42            500           8.40
+   {txt}k75sic_fin~l{col 17}{c |} {res}         13            500           2.60
+         {txt}k75roa{col 17}{c |} {res}         33            500           6.60
+     {txt}k75lnfloat{col 17}{c |} {res}          4            500           0.80
+   {txt}k75cashratio{col 17}{c |} {res}         19            500           3.80
+    {txt}k75turnover{col 17}{c |} {res}         15            500           3.00
+   {txt}k700_margi~l{col 17}{c |} {res}          0            500           0.00
+         {txt}k700tq{col 17}{c |} {res}         47            500           9.40
+        {txt}k700ppe{col 17}{c |} {res}        101            500          20.20
+   {txt}k700hp_tsimm{col 17}{c |} {res}         28            500           5.60
+   {txt}k700sic_ma~c{col 17}{c |} {res}         26            500           5.20
+   {txt}k700sic_fi~l{col 17}{c |} {res}         35            500           7.00
+        {txt}k700roa{col 17}{c |} {res}        140            500          28.00
+    {txt}k700lnfloat{col 17}{c |} {res}        225            500          45.00
+   {txt}k700cashra~o{col 17}{c |} {res}         27            500           5.40
+   {txt}k700turnover{col 17}{c |} {res}         61            500          12.20
+{txt}{hline 16}{c +}{hline 47}
+
+{com}. replace k25lnfloat=0.412 
+{txt}(500 real changes made)
+
+{com}. replace k75lnfloat=0.456 
+{txt}(500 real changes made)
+
+{com}. replace k700lnfloat=0.423
+{txt}(500 real changes made)
+
+{com}. compress
+  {txt}variable {bf}{res}replication{sf}{txt} was {bf}{res}double{sf}{txt} now {bf}{res}int{sf}
+{txt}  (3,000 bytes saved)
+
+{com}. isid replication, s
+{txt}(data already sorted by {bf:replication})
+
+{com}. save $input/extrapolate_parameters_res_ln_boot500_v3, replace
+{txt}{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/input/extrapolate_parameters_res_ln_boot500_v3.dta{rm}
+saved
+{p_end}
+
+{com}. capture erase $input/bootstrap_1.dta
+{txt}
+{com}. capture erase $input/bootstrap_2.dta
+{txt}
+{com}. capture erase $input/bootstrap_3.dta
+{txt}
+{com}. 
+. 
+. use $output/Table5b_x.dta, clear
+{txt}
+{com}. drop id
+{txt}
+{com}. drop if _n==1
+{txt}(1 observation deleted)
+
+{com}. g id=1
+{txt}
+{com}. g char=_n
+{txt}
+{com}. g varname=""
+{txt}(8 missing values generated)
+
+{com}. replace varname="tq" if char==1
+{txt}variable {bf}{res}varname{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str2{sf}
+{txt}(1 real change made)
+
+{com}. replace varname="ppe" if char==2
+{txt}variable {bf}{res}varname{sf}{txt} was {bf}{res}str2{sf}{txt} now {bf}{res}str3{sf}
+{txt}(1 real change made)
+
+{com}. replace varname="hp_tsimm" if char==3
+{txt}variable {bf}{res}varname{sf}{txt} was {bf}{res}str3{sf}{txt} now {bf}{res}str8{sf}
+{txt}(1 real change made)
+
+{com}. replace varname="sic_manufac" if char==4
+{txt}variable {bf}{res}varname{sf}{txt} was {bf}{res}str8{sf}{txt} now {bf}{res}str11{sf}
+{txt}(1 real change made)
+
+{com}. replace varname="sic_finutil" if char==5
+{txt}(1 real change made)
+
+{com}. replace varname="roa" if char==6
+{txt}(1 real change made)
+
+{com}. replace varname="cashratio" if char==7
+{txt}(1 real change made)
+
+{com}. replace varname="turnover" if char==8
+{txt}(1 real change made)
+
+{com}. drop char
+{txt}
+{com}. rename x_* v*
+{res}{txt}
+{com}. reshape wide v25 v75 v700, i(id) j(varname) string
+{txt}(j = cashratio hp_tsimm ppe roa sic_finutil sic_manufac tq turnover)
+
+Data{col 36}Long{col 43}->{col 48}Wide
+{hline 77}
+Number of observations     {res}           8   {txt}->   {res}1           
+{txt}Number of variables        {res}           5   {txt}->   {res}25          
+{txt}j variable (8 values)           {res}varname   {txt}->   (dropped)
+xij variables:
+                                    {res}v25   {txt}->   {res}v25cashratio v25hp_tsimm ... v25turnover
+                                    v75   {txt}->   {res}v75cashratio v75hp_tsimm ... v75turnover
+                                   v700   {txt}->   {res}v700cashratio v700hp_tsimm ... v700turnover
+{txt}{hline 77}
+
+{com}. drop id
+{txt}
+{com}. cross using $input/extrapolate_parameters_res_ln_boot500_v3
+{txt}
+{com}. order replication
+{txt}
+{com}. isid replication, s
+{txt}(data now sorted by {bf:replication})
+
+{com}. egen nmiss_25=rmiss2(k25*)
+{txt}
+{com}. egen nmiss_75=rmiss2(k75*)
+{txt}
+{com}. egen nmiss_700=rmiss2(k700*)
+{txt}
+{com}. preserve
+{txt}
+{com}.         collapse (sd) k25tq k25ppe k25hp_tsimm k25sic_manufac k25sic_finutil k25roa k25cashratio k25turnover if nmiss_25==0
+{res}{txt}
+{com}.         g id=1
+{txt}
+{com}.         reshape long k25, i(id) j(var) string
+{txt}(j = cashratio hp_tsimm ppe roa sic_finutil sic_manufac tq turnover)
+
+Data{col 36}Wide{col 43}->{col 48}Long
+{hline 77}
+Number of observations     {res}           1   {txt}->   {res}8           
+{txt}Number of variables        {res}           9   {txt}->   {res}3           
+{txt}j variable (8 values)                     ->   {res}var
+{txt}xij variables:
+{res}k25cashratio k25hp_tsimm ... k25turnover  {txt}->   {res}k25
+{txt}{hline 77}
+
+{com}.         drop id
+{txt}
+{com}.         save $output/boot_sd_25, replace
+{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/boot_sd_25.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/boot_sd_25.dta{rm}
+saved
+{p_end}
+
+{com}. restore
+{txt}
+{com}. preserve
+{txt}
+{com}.         collapse (sd) k75tq k75ppe k75hp_tsimm k75sic_manufac k75sic_finutil k75roa k75cashratio k75turnover if nmiss_75==0
+{res}{txt}
+{com}.         g id=1
+{txt}
+{com}.         reshape long k75, i(id) j(var) string
+{txt}(j = cashratio hp_tsimm ppe roa sic_finutil sic_manufac tq turnover)
+
+Data{col 36}Wide{col 43}->{col 48}Long
+{hline 77}
+Number of observations     {res}           1   {txt}->   {res}8           
+{txt}Number of variables        {res}           9   {txt}->   {res}3           
+{txt}j variable (8 values)                     ->   {res}var
+{txt}xij variables:
+{res}k75cashratio k75hp_tsimm ... k75turnover  {txt}->   {res}k75
+{txt}{hline 77}
+
+{com}.         drop id
+{txt}
+{com}.         save $output/boot_sd_75, replace
+{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/boot_sd_75.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/boot_sd_75.dta{rm}
+saved
+{p_end}
+
+{com}. restore
+{txt}
+{com}. preserve
+{txt}
+{com}.         collapse (sd) k700tq k700ppe k700hp_tsimm k700sic_manufac k700sic_finutil k700roa k700cashratio k700turnover if nmiss_700==0
+{res}{txt}
+{com}.         g id=1
+{txt}
+{com}.         reshape long k700, i(id) j(var) string
+{txt}(j = cashratio hp_tsimm ppe roa sic_finutil sic_manufac tq turnover)
+
+Data{col 36}Wide{col 43}->{col 48}Long
+{hline 77}
+Number of observations     {res}           1   {txt}->   {res}8           
+{txt}Number of variables        {res}           9   {txt}->   {res}3           
+{txt}j variable (8 values)                     ->   {res}var
+{txt}xij variables:
+{res}k700cashratio k700hp_tsimm ... k700turnover{txt}->  {res}k700
+{txt}{hline 77}
+
+{com}.         drop id
+{txt}
+{com}.         save $output/boot_sd_700, replace
+{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/boot_sd_700.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/boot_sd_700.dta{rm}
+saved
+{p_end}
+
+{com}. restore
+{txt}
+{com}. 
+. use $output/boot_sd_25, clear
+{txt}
+{com}. merge 1:1 var using $output/boot_sd_75, nogen
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}               8{txt}  
+{col 5}{hline 41}
+
+{com}. merge 1:1 var using $output/boot_sd_700, nogen
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}               8{txt}  
+{col 5}{hline 41}
+
+{com}. rename k* kappa_sd_*
+{res}{txt}
+{com}. replace var="Cash ratio" if var=="cashratio"
+{txt}(1 real change made)
+
+{com}. replace var="Tobin's Q" if var=="tq"
+{txt}(1 real change made)
+
+{com}. replace var="Tangibility" if var=="ppe"
+{txt}(1 real change made)
+
+{com}. replace var="HP competition" if var=="hp_tsimm"
+{txt}variable {bf}{res}var{sf}{txt} was {bf}{res}str11{sf}{txt} now {bf}{res}str14{sf}
+{txt}(1 real change made)
+
+{com}. replace var="Manufac." if var=="sic_manufac"
+{txt}(1 real change made)
+
+{com}. replace var="Fin & utility" if var=="sic_finutil"
+{txt}(1 real change made)
+
+{com}. replace var="ROA" if var=="roa"
+{txt}(1 real change made)
+
+{com}. replace var="Turnover" if var=="turnover"
+{txt}(1 real change made)
+
+{com}. insobs 1, before(1)
+{txt}(1 observation added)
+
+{com}. replace var="Ln(public float)" if var==""
+{txt}variable {bf}{res}var{sf}{txt} was {bf}{res}str14{sf}{txt} now {bf}{res}str16{sf}
+{txt}(1 real change made)
+
+{com}. /*sd err of cost-float elasticities from Table A.5*/
+. replace kappa_sd_25=0.027 if kappa_sd_25==.
+{txt}(1 real change made)
+
+{com}. replace kappa_sd_75=0.028 if kappa_sd_75==.
+{txt}(1 real change made)
+
+{com}. replace kappa_sd_700=0.019 if kappa_sd_700==.
+{txt}(1 real change made)
+
+{com}. foreach x of varlist kappa_sd_* {c -(}
+{txt}  2{com}.         replace `x'=round(`x', 0.001)
+{txt}  3{com}. {c )-}
+{txt}(8 real changes made)
+(8 real changes made)
+(8 real changes made)
+
+{com}. format kappa_sd_* %5.3f
+{txt}
+{com}. rename var covariate
+{res}{txt}
+{com}. save $output/boot_sd, replace
+{txt}{p 0 4 2}
+(file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/boot_sd.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+F:/Dropbox/bunching_JOBS/JFE_replication/output/boot_sd.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. use $output/Table5b, clear
+{txt}
+{com}. g id=_n
+{txt}
+{com}. merge 1:1 covariate using $output/boot_sd, nogen
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}               9{txt}  
+{col 5}{hline 41}
+
+{com}. sort id
+{txt}
+{com}. drop id
+{txt}
+{com}. forv x=1(2)17 {c -(}
+{txt}  2{com}. insobs 1, after(`x')
+{txt}  3{com}. {c )-}
+{txt}(1 observation added)
+(1 observation added)
+(1 observation added)
+(1 observation added)
+(1 observation added)
+(1 observation added)
+(1 observation added)
+(1 observation added)
+(1 observation added)
+
+{com}. foreach x in 25 75 700 {c -(}
+{txt}  2{com}.         replace kappa_`x'=kappa_sd_`x'[_n-1] if kappa_`x'==.
+{txt}  3{com}.         drop kappa_sd_`x'
+{txt}  4{com}. {c )-}
+{txt}(9 real changes made)
+(9 real changes made)
+(9 real changes made)
+
+{com}. export excel using "$output/Table5b.xlsx", firstrow(variables) keepcellfmt replace
+{res}{txt}file {bf:F:/Dropbox/bunching_JOBS/JFE_replication/output/Table5b.xlsx} saved
+
+{com}. 
+. 
+. 
+. capture erase $output/temp.dta
+{txt}
+{com}. capture erase $output/Table5b_kappa.dta
+{txt}
+{com}. capture erase $output/Table5b_x.dta
+{txt}
+{com}. capture erase $output/Table5b.dta
+{txt}
+{com}. capture erase $output/Table5a.dta
+{txt}
+{com}. capture erase $output/boot_sd_25.dta
+{txt}
+{com}. capture erase $output/boot_sd_75.dta
+{txt}
+{com}. capture erase $output/boot_sd_700.dta
+{txt}
+{com}. capture erase $output/boot_sd.dta
+{txt}
+{com}. 
+. 
+. 
+{txt}end of do-file
+
+{com}. 
+. 
+. ***********
+. * Table 6
+. ***********
+. do Table6.do
+{txt}
+{com}. *************************************
+. *Replication code for Ewens Xiao and Xu 2023
+. *************************************
+. ****************
+. * Table 6
+. ****************
+. /*Note: coefficients and standard errors for marginal effects are multipled by 100 in the final table to represent the percentage effect. */ 
+. 
+. use $input/ipo_counterfactual_v3, clear
+{txt}
+{com}. 
+. sum ipo_dummy ln_K_total ln_publicfloat_mil ln_totalRaised age
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 3}ipo_dummy {c |}{res}    209,385    4.493689    2.874808          0          9
+{txt}{space 2}ln_K_total {c |}{res}    209,385    4.508709    2.872684          0          9
+{txt}ln_publicf~l {c |}{res}    116,800    4.512449    2.870835          0          9
+{txt}ln_totalRa~d {c |}{res}    195,349    4.493983    2.868969          0          9
+{txt}{space 9}age {c |}{res}    209,385    4.491482    2.874264          0          9
+{txt}
+{com}. mdesc ipo_dummy ln_K_total ln_publicfloat_mil ln_totalRaised age
+
+{txt}    Variable{col 17}{c |}     Missing          Total     Percent Missing
+{hline 16}{c +}{hline 47}
+      ipo_dummy{col 17}{c |} {res}          0        209,385           0.00
+     {txt}ln_K_total{col 17}{c |} {res}          0        209,385           0.00
+   {txt}ln_publicf~l{col 17}{c |} {res}     92,585        209,385          44.22
+   {txt}ln_totalRa~d{col 17}{c |} {res}     14,036        209,385           6.70
+            {txt}age{col 17}{c |} {res}          0        209,385           0.00
+{txt}{hline 16}{c +}{hline 47}
+
+{com}. 
+. eststo clear
+{txt}
+{com}. logit ipo_dummy ln_K_total ln_publicfloat_mil ln_totalRaised age ///
+> i.ind_year_fe i.state_fe, cluster(newID)
+
+{res}{txt}Iteration 0:{space 2}Log pseudolikelihood = {res:-38106.406}  
+Iteration 1:{space 2}Log pseudolikelihood = {res:-38099.791}  
+Iteration 2:{space 2}Log pseudolikelihood = {res:-38099.789}  
+{res}
+{txt}{col 1}Logistic regression{col 56}{lalign 13:Number of obs}{col 69} = {res}{ralign 7:116,703}
+{txt}{col 56}{lalign 13:Wald chi2({res:22})}{col 69} = {res}{ralign 7:13.25}
+{txt}{col 56}{lalign 13:Prob > chi2}{col 69} = {res}{ralign 7:0.9259}
+{txt}{col 1}{lalign 20:Log pseudolikelihood}{col 21} = {res}{ralign 10:-38099.789}{txt}{col 56}{lalign 13:Pseudo R2}{col 69} = {res}{ralign 7:0.0002}
+
+{txt}{ralign 84:(Std. err. adjusted for {res:21,451} clusters in {res:newID})}
+{hline 19}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 20}{c |}{col 32}    Robust
+{col 1}         ipo_dummy{col 20}{c |} Coefficient{col 32}  std. err.{col 44}      z{col 52}   P>|z|{col 60}     [95% con{col 73}f. interval]
+{hline 19}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}ln_K_total {c |}{col 20}{res}{space 2} .0007928{col 32}{space 2} .0033749{col 43}{space 1}    0.23{col 52}{space 3}0.814{col 60}{space 4}-.0058219{col 73}{space 3} .0074076
+{txt}ln_publicfloat_mil {c |}{col 20}{res}{space 2}-.0020433{col 32}{space 2} .0033858{col 43}{space 1}   -0.60{col 52}{space 3}0.546{col 60}{space 4}-.0086793{col 73}{space 3} .0045928
+{txt}{space 4}ln_totalRaised {c |}{col 20}{res}{space 2}-.0016464{col 32}{space 2} .0034022{col 43}{space 1}   -0.48{col 52}{space 3}0.628{col 60}{space 4}-.0083146{col 73}{space 3} .0050219
+{txt}{space 15}age {c |}{col 20}{res}{space 2} .0010257{col 32}{space 2} .0034263{col 43}{space 1}    0.30{col 52}{space 3}0.765{col 60}{space 4}-.0056897{col 73}{space 3} .0077411
+{txt}{space 18} {c |}
+{space 7}ind_year_fe {c |}
+{space 16}1  {c |}{col 20}{res}{space 2} .0490692{col 32}{space 2} .0431486{col 43}{space 1}    1.14{col 52}{space 3}0.255{col 60}{space 4}-.0355005{col 73}{space 3}  .133639
+{txt}{space 16}2  {c |}{col 20}{res}{space 2} .0664202{col 32}{space 2} .0433863{col 43}{space 1}    1.53{col 52}{space 3}0.126{col 60}{space 4}-.0186155{col 73}{space 3} .1514559
+{txt}{space 16}3  {c |}{col 20}{res}{space 2} .0228719{col 32}{space 2} .0427948{col 43}{space 1}    0.53{col 52}{space 3}0.593{col 60}{space 4}-.0610043{col 73}{space 3} .1067482
+{txt}{space 16}4  {c |}{col 20}{res}{space 2}  .012991{col 32}{space 2} .0435523{col 43}{space 1}    0.30{col 52}{space 3}0.765{col 60}{space 4}-.0723699{col 73}{space 3}  .098352
+{txt}{space 16}5  {c |}{col 20}{res}{space 2}  .038536{col 32}{space 2} .0434013{col 43}{space 1}    0.89{col 52}{space 3}0.375{col 60}{space 4} -.046529{col 73}{space 3} .1236011
+{txt}{space 16}6  {c |}{col 20}{res}{space 2} .0346441{col 32}{space 2} .0434394{col 43}{space 1}    0.80{col 52}{space 3}0.425{col 60}{space 4}-.0504955{col 73}{space 3} .1197837
+{txt}{space 16}7  {c |}{col 20}{res}{space 2}-.0130821{col 32}{space 2} .0426839{col 43}{space 1}   -0.31{col 52}{space 3}0.759{col 60}{space 4} -.096741{col 73}{space 3} .0705769
+{txt}{space 16}8  {c |}{col 20}{res}{space 2}  .046244{col 32}{space 2} .0431561{col 43}{space 1}    1.07{col 52}{space 3}0.284{col 60}{space 4}-.0383405{col 73}{space 3} .1308285
+{txt}{space 16}9  {c |}{col 20}{res}{space 2} .0264337{col 32}{space 2} .0433547{col 43}{space 1}    0.61{col 52}{space 3}0.542{col 60}{space 4}-.0585399{col 73}{space 3} .1114073
+{txt}{space 18} {c |}
+{space 10}state_fe {c |}
+{space 16}1  {c |}{col 20}{res}{space 2}-.0603068{col 32}{space 2} .0430195{col 43}{space 1}   -1.40{col 52}{space 3}0.161{col 60}{space 4}-.1446234{col 73}{space 3} .0240099
+{txt}{space 16}2  {c |}{col 20}{res}{space 2}-.0248343{col 32}{space 2} .0438345{col 43}{space 1}   -0.57{col 52}{space 3}0.571{col 60}{space 4}-.1107484{col 73}{space 3} .0610799
+{txt}{space 16}3  {c |}{col 20}{res}{space 2} .0154039{col 32}{space 2}  .043406{col 43}{space 1}    0.35{col 52}{space 3}0.723{col 60}{space 4}-.0696703{col 73}{space 3} .1004782
+{txt}{space 16}4  {c |}{col 20}{res}{space 2} .0221416{col 32}{space 2} .0442555{col 43}{space 1}    0.50{col 52}{space 3}0.617{col 60}{space 4}-.0645976{col 73}{space 3} .1088808
+{txt}{space 16}5  {c |}{col 20}{res}{space 2} -.029166{col 32}{space 2} .0436886{col 43}{space 1}   -0.67{col 52}{space 3}0.504{col 60}{space 4} -.114794{col 73}{space 3}  .056462
+{txt}{space 16}6  {c |}{col 20}{res}{space 2}-.0286951{col 32}{space 2}  .043504{col 43}{space 1}   -0.66{col 52}{space 3}0.510{col 60}{space 4}-.1139614{col 73}{space 3} .0565711
+{txt}{space 16}7  {c |}{col 20}{res}{space 2}-.0203692{col 32}{space 2} .0434761{col 43}{space 1}   -0.47{col 52}{space 3}0.639{col 60}{space 4}-.1055807{col 73}{space 3} .0648424
+{txt}{space 16}8  {c |}{col 20}{res}{space 2}-.0032524{col 32}{space 2} .0434473{col 43}{space 1}   -0.07{col 52}{space 3}0.940{col 60}{space 4}-.0884076{col 73}{space 3} .0819027
+{txt}{space 16}9  {c |}{col 20}{res}{space 2} .0238957{col 32}{space 2} .0436712{col 43}{space 1}    0.55{col 52}{space 3}0.584{col 60}{space 4}-.0616982{col 73}{space 3} .1094896
+{txt}{space 18} {c |}
+{space 13}_cons {c |}{col 20}{res}{space 2} 2.181075{col 32}{space 2} .0515338{col 43}{space 1}   42.32{col 52}{space 3}0.000{col 60}{space 4}  2.08007{col 73}{space 3} 2.282079
+{txt}{hline 19}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. estadd local FE1 "Yes"
+
+{txt}added macro:
+                e(FE1) : "{res:Yes}"
+
+{com}. estadd local FE2 "Yes"
+
+{txt}added macro:
+                e(FE2) : "{res:Yes}"
+
+{com}. eststo
+{txt}({res}est1{txt} stored)
+
+{com}. 
+. margins, dydx(*) atmeans post
+{res}
+{txt}{col 1}Conditional marginal effects{col 56}{lalign 13:Number of obs}{col 69} = {res}{ralign 7:116,703}
+{txt}{col 1}Model VCE: {res:Robust}
+
+{txt}{p2colset 1 13 13 2}{...}
+{p2col:Expression:}{res:Pr(ipo_dummy), predict()}{p_end}
+{p2col:dy/dx wrt:}{res:ln_K_total ln_publicfloat_mil ln_totalRaised age 1.ind_year_fe 2.ind_year_fe 3.ind_year_fe 4.ind_year_fe 5.ind_year_fe 6.ind_year_fe 7.ind_year_fe 8.ind_year_fe 9.ind_year_fe 1.state_fe 2.state_fe 3.state_fe 4.state_fe 5.state_fe 6.state_fe 7.state_fe 8.state_fe 9.state_fe}{p_end}
+{p2colreset}{...}
+{lalign 4:At: }{space 0}{lalign 18:ln_K_total} = {res:{ralign 8:4.51452}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:ln_publicfloat_mil} = {res:{ralign 8:4.512703}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:ln_totalRaised} = {res:{ralign 8:4.500527}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:age} = {res:{ralign 8:4.488488}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:0.ind_year_fe} = {res:{ralign 8:.1006572}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:1.ind_year_fe} = {res:{ralign 8:.0998432}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:2.ind_year_fe} = {res:{ralign 8:.1001174}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:3.ind_year_fe} = {res:{ralign 8:.0998775}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:4.ind_year_fe} = {res:{ralign 8:.0987378}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:5.ind_year_fe} = {res:{ralign 8:.0996375}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:6.ind_year_fe} = {res:{ralign 8:.1007001}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:7.ind_year_fe} = {res:{ralign 8:.1011456}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:8.ind_year_fe} = {res:{ralign 8:.0995004}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:9.ind_year_fe} = {res:{ralign 8:.0997832}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:0.state_fe} = {res:{ralign 8:.099449}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:1.state_fe} = {res:{ralign 8:.1019425}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:2.state_fe} = {res:{ralign 8:.0993205}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:3.state_fe} = {res:{ralign 8:.1008457}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:4.state_fe} = {res:{ralign 8:.0990035}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:5.state_fe} = {res:{ralign 8:.0995433}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:6.state_fe} = {res:{ralign 8:.0988749}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:7.state_fe} = {res:{ralign 8:.0984979}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:8.state_fe} = {res:{ralign 8:.1020025}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:9.state_fe} = {res:{ralign 8:.1005201}} {txt:(mean)}
+
+{res}{txt}{hline 19}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 20}{c |}{col 32} Delta-method
+{col 20}{c |}      dy/dx{col 32}   std. err.{col 44}      z{col 52}   P>|z|{col 60}     [95% con{col 73}f. interval]
+{hline 19}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}ln_K_total {c |}{col 20}{res}{space 2} .0000717{col 32}{space 2} .0003054{col 43}{space 1}    0.23{col 52}{space 3}0.814{col 60}{space 4}-.0005268{col 73}{space 3} .0006703
+{txt}ln_publicfloat_mil {c |}{col 20}{res}{space 2}-.0001849{col 32}{space 2} .0003064{col 43}{space 1}   -0.60{col 52}{space 3}0.546{col 60}{space 4}-.0007853{col 73}{space 3} .0004156
+{txt}{space 4}ln_totalRaised {c |}{col 20}{res}{space 2} -.000149{col 32}{space 2} .0003079{col 43}{space 1}   -0.48{col 52}{space 3}0.628{col 60}{space 4}-.0007524{col 73}{space 3} .0004544
+{txt}{space 15}age {c |}{col 20}{res}{space 2} .0000928{col 32}{space 2}   .00031{col 43}{space 1}    0.30{col 52}{space 3}0.765{col 60}{space 4}-.0005148{col 73}{space 3} .0007005
+{txt}{space 18} {c |}
+{space 7}ind_year_fe {c |}
+{space 16}1  {c |}{col 20}{res}{space 2}  .004454{col 32}{space 2} .0039154{col 43}{space 1}    1.14{col 52}{space 3}0.255{col 60}{space 4}-.0032201{col 73}{space 3} .0121281
+{txt}{space 16}2  {c |}{col 20}{res}{space 2} .0059876{col 32}{space 2} .0039101{col 43}{space 1}    1.53{col 52}{space 3}0.126{col 60}{space 4}-.0016761{col 73}{space 3} .0136513
+{txt}{space 16}3  {c |}{col 20}{res}{space 2} .0020978{col 32}{space 2} .0039249{col 43}{space 1}    0.53{col 52}{space 3}0.593{col 60}{space 4}-.0055949{col 73}{space 3} .0097904
+{txt}{space 16}4  {c |}{col 20}{res}{space 2} .0011962{col 32}{space 2} .0040097{col 43}{space 1}    0.30{col 52}{space 3}0.765{col 60}{space 4}-.0066627{col 73}{space 3} .0090552
+{txt}{space 16}5  {c |}{col 20}{res}{space 2} .0035126{col 32}{space 2} .0039549{col 43}{space 1}    0.89{col 52}{space 3}0.374{col 60}{space 4}-.0042389{col 73}{space 3}  .011264
+{txt}{space 16}6  {c |}{col 20}{res}{space 2} .0031627{col 32}{space 2} .0039652{col 43}{space 1}    0.80{col 52}{space 3}0.425{col 60}{space 4}-.0046089{col 73}{space 3} .0109343
+{txt}{space 16}7  {c |}{col 20}{res}{space 2}-.0012171{col 32}{space 2} .0039712{col 43}{space 1}   -0.31{col 52}{space 3}0.759{col 60}{space 4}-.0090006{col 73}{space 3} .0065663
+{txt}{space 16}8  {c |}{col 20}{res}{space 2} .0042023{col 32}{space 2} .0039207{col 43}{space 1}    1.07{col 52}{space 3}0.284{col 60}{space 4} -.003482{col 73}{space 3} .0118866
+{txt}{space 16}9  {c |}{col 20}{res}{space 2} .0024211{col 32}{space 2}   .00397{col 43}{space 1}    0.61{col 52}{space 3}0.542{col 60}{space 4}  -.00536{col 73}{space 3} .0102022
+{txt}{space 18} {c |}
+{space 10}state_fe {c |}
+{space 16}1  {c |}{col 20}{res}{space 2}-.0055434{col 32}{space 2}  .003952{col 43}{space 1}   -1.40{col 52}{space 3}0.161{col 60}{space 4}-.0132892{col 73}{space 3} .0022023
+{txt}{space 16}2  {c |}{col 20}{res}{space 2}-.0022506{col 32}{space 2} .0039726{col 43}{space 1}   -0.57{col 52}{space 3}0.571{col 60}{space 4}-.0100367{col 73}{space 3} .0055355
+{txt}{space 16}3  {c |}{col 20}{res}{space 2} .0013737{col 32}{space 2} .0038711{col 43}{space 1}    0.35{col 52}{space 3}0.723{col 60}{space 4}-.0062135{col 73}{space 3} .0089609
+{txt}{space 16}4  {c |}{col 20}{res}{space 2} .0019692{col 32}{space 2} .0039357{col 43}{space 1}    0.50{col 52}{space 3}0.617{col 60}{space 4}-.0057447{col 73}{space 3} .0096831
+{txt}{space 16}5  {c |}{col 20}{res}{space 2}-.0026478{col 32}{space 2} .0039661{col 43}{space 1}   -0.67{col 52}{space 3}0.504{col 60}{space 4}-.0104211{col 73}{space 3} .0051255
+{txt}{space 16}6  {c |}{col 20}{res}{space 2}-.0026045{col 32}{space 2} .0039485{col 43}{space 1}   -0.66{col 52}{space 3}0.509{col 60}{space 4}-.0103435{col 73}{space 3} .0051345
+{txt}{space 16}7  {c |}{col 20}{res}{space 2}-.0018427{col 32}{space 2} .0039327{col 43}{space 1}   -0.47{col 52}{space 3}0.639{col 60}{space 4}-.0095506{col 73}{space 3} .0058653
+{txt}{space 16}8  {c |}{col 20}{res}{space 2}-.0002922{col 32}{space 2} .0039035{col 43}{space 1}   -0.07{col 52}{space 3}0.940{col 60}{space 4} -.007943{col 73}{space 3} .0073585
+{txt}{space 16}9  {c |}{col 20}{res}{space 2} .0021237{col 32}{space 2} .0038817{col 43}{space 1}    0.55{col 52}{space 3}0.584{col 60}{space 4}-.0054842{col 73}{space 3} .0097317
+{txt}{hline 19}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 0 84}Note: dy/dx for factor levels is the discrete change from the base level.{txt}{p_end}
+{res}{txt}
+{com}. estadd local FE1 "Yes"
+
+{txt}added macro:
+                e(FE1) : "{res:Yes}"
+
+{com}. estadd local FE2 "Yes"
+
+{txt}added macro:
+                e(FE2) : "{res:Yes}"
+
+{com}. eststo
+{txt}({res}est2{txt} stored)
+
+{com}. 
+. esttab using "$output/Table6.tex",  ///
+> replace b(6) se(6) star(* 0.10 ** 0.05 *** 0.01  )   ///
+> ar2  br  label mtitle noconstant  nonotes  stats(FE1 FE2 N , ///
+> label("Industry-year FE"  "State FE" "Observations" ) ///
+> fmt(0 %9.0fc )) width(/hsize)  drop(*.ind_year_fe *.state_fe _cons )
+{res}{txt}(output written to {browse  `"F:/Dropbox/bunching_JOBS/JFE_replication/output/Table6.tex"'})
+
+{com}. 
+. 
+{txt}end of do-file
+
+{com}. 
+. 
+. ***********
+. * Table 7
+. ***********
+. do Table7.do
+{txt}
+{com}. *************************************
+. *Replication code for Ewens Xiao and Xu 2023
+. *************************************
+. ****************
+. * Table 7
+. ****************
+. use $input/ipo_counterfactual_v3, clear
+{txt}
+{com}. 
+. logit ipo_dummy ln_K_total ln_publicfloat_mil ln_totalRaised age  ///
+> i.ind_year_fe i.state_fe, cluster(newID)
+
+{res}{txt}Iteration 0:{space 2}Log pseudolikelihood = {res:-38106.406}  
+Iteration 1:{space 2}Log pseudolikelihood = {res:-38099.791}  
+Iteration 2:{space 2}Log pseudolikelihood = {res:-38099.789}  
+{res}
+{txt}{col 1}Logistic regression{col 56}{lalign 13:Number of obs}{col 69} = {res}{ralign 7:116,703}
+{txt}{col 56}{lalign 13:Wald chi2({res:22})}{col 69} = {res}{ralign 7:13.25}
+{txt}{col 56}{lalign 13:Prob > chi2}{col 69} = {res}{ralign 7:0.9259}
+{txt}{col 1}{lalign 20:Log pseudolikelihood}{col 21} = {res}{ralign 10:-38099.789}{txt}{col 56}{lalign 13:Pseudo R2}{col 69} = {res}{ralign 7:0.0002}
+
+{txt}{ralign 84:(Std. err. adjusted for {res:21,451} clusters in {res:newID})}
+{hline 19}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 20}{c |}{col 32}    Robust
+{col 1}         ipo_dummy{col 20}{c |} Coefficient{col 32}  std. err.{col 44}      z{col 52}   P>|z|{col 60}     [95% con{col 73}f. interval]
+{hline 19}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}ln_K_total {c |}{col 20}{res}{space 2} .0007928{col 32}{space 2} .0033749{col 43}{space 1}    0.23{col 52}{space 3}0.814{col 60}{space 4}-.0058219{col 73}{space 3} .0074076
+{txt}ln_publicfloat_mil {c |}{col 20}{res}{space 2}-.0020433{col 32}{space 2} .0033858{col 43}{space 1}   -0.60{col 52}{space 3}0.546{col 60}{space 4}-.0086793{col 73}{space 3} .0045928
+{txt}{space 4}ln_totalRaised {c |}{col 20}{res}{space 2}-.0016464{col 32}{space 2} .0034022{col 43}{space 1}   -0.48{col 52}{space 3}0.628{col 60}{space 4}-.0083146{col 73}{space 3} .0050219
+{txt}{space 15}age {c |}{col 20}{res}{space 2} .0010257{col 32}{space 2} .0034263{col 43}{space 1}    0.30{col 52}{space 3}0.765{col 60}{space 4}-.0056897{col 73}{space 3} .0077411
+{txt}{space 18} {c |}
+{space 7}ind_year_fe {c |}
+{space 16}1  {c |}{col 20}{res}{space 2} .0490692{col 32}{space 2} .0431486{col 43}{space 1}    1.14{col 52}{space 3}0.255{col 60}{space 4}-.0355005{col 73}{space 3}  .133639
+{txt}{space 16}2  {c |}{col 20}{res}{space 2} .0664202{col 32}{space 2} .0433863{col 43}{space 1}    1.53{col 52}{space 3}0.126{col 60}{space 4}-.0186155{col 73}{space 3} .1514559
+{txt}{space 16}3  {c |}{col 20}{res}{space 2} .0228719{col 32}{space 2} .0427948{col 43}{space 1}    0.53{col 52}{space 3}0.593{col 60}{space 4}-.0610043{col 73}{space 3} .1067482
+{txt}{space 16}4  {c |}{col 20}{res}{space 2}  .012991{col 32}{space 2} .0435523{col 43}{space 1}    0.30{col 52}{space 3}0.765{col 60}{space 4}-.0723699{col 73}{space 3}  .098352
+{txt}{space 16}5  {c |}{col 20}{res}{space 2}  .038536{col 32}{space 2} .0434013{col 43}{space 1}    0.89{col 52}{space 3}0.375{col 60}{space 4} -.046529{col 73}{space 3} .1236011
+{txt}{space 16}6  {c |}{col 20}{res}{space 2} .0346441{col 32}{space 2} .0434394{col 43}{space 1}    0.80{col 52}{space 3}0.425{col 60}{space 4}-.0504955{col 73}{space 3} .1197837
+{txt}{space 16}7  {c |}{col 20}{res}{space 2}-.0130821{col 32}{space 2} .0426839{col 43}{space 1}   -0.31{col 52}{space 3}0.759{col 60}{space 4} -.096741{col 73}{space 3} .0705769
+{txt}{space 16}8  {c |}{col 20}{res}{space 2}  .046244{col 32}{space 2} .0431561{col 43}{space 1}    1.07{col 52}{space 3}0.284{col 60}{space 4}-.0383405{col 73}{space 3} .1308285
+{txt}{space 16}9  {c |}{col 20}{res}{space 2} .0264337{col 32}{space 2} .0433547{col 43}{space 1}    0.61{col 52}{space 3}0.542{col 60}{space 4}-.0585399{col 73}{space 3} .1114073
+{txt}{space 18} {c |}
+{space 10}state_fe {c |}
+{space 16}1  {c |}{col 20}{res}{space 2}-.0603068{col 32}{space 2} .0430195{col 43}{space 1}   -1.40{col 52}{space 3}0.161{col 60}{space 4}-.1446234{col 73}{space 3} .0240099
+{txt}{space 16}2  {c |}{col 20}{res}{space 2}-.0248343{col 32}{space 2} .0438345{col 43}{space 1}   -0.57{col 52}{space 3}0.571{col 60}{space 4}-.1107484{col 73}{space 3} .0610799
+{txt}{space 16}3  {c |}{col 20}{res}{space 2} .0154039{col 32}{space 2}  .043406{col 43}{space 1}    0.35{col 52}{space 3}0.723{col 60}{space 4}-.0696703{col 73}{space 3} .1004782
+{txt}{space 16}4  {c |}{col 20}{res}{space 2} .0221416{col 32}{space 2} .0442555{col 43}{space 1}    0.50{col 52}{space 3}0.617{col 60}{space 4}-.0645976{col 73}{space 3} .1088808
+{txt}{space 16}5  {c |}{col 20}{res}{space 2} -.029166{col 32}{space 2} .0436886{col 43}{space 1}   -0.67{col 52}{space 3}0.504{col 60}{space 4} -.114794{col 73}{space 3}  .056462
+{txt}{space 16}6  {c |}{col 20}{res}{space 2}-.0286951{col 32}{space 2}  .043504{col 43}{space 1}   -0.66{col 52}{space 3}0.510{col 60}{space 4}-.1139614{col 73}{space 3} .0565711
+{txt}{space 16}7  {c |}{col 20}{res}{space 2}-.0203692{col 32}{space 2} .0434761{col 43}{space 1}   -0.47{col 52}{space 3}0.639{col 60}{space 4}-.1055807{col 73}{space 3} .0648424
+{txt}{space 16}8  {c |}{col 20}{res}{space 2}-.0032524{col 32}{space 2} .0434473{col 43}{space 1}   -0.07{col 52}{space 3}0.940{col 60}{space 4}-.0884076{col 73}{space 3} .0819027
+{txt}{space 16}9  {c |}{col 20}{res}{space 2} .0238957{col 32}{space 2} .0436712{col 43}{space 1}    0.55{col 52}{space 3}0.584{col 60}{space 4}-.0616982{col 73}{space 3} .1094896
+{txt}{space 18} {c |}
+{space 13}_cons {c |}{col 20}{res}{space 2} 2.181075{col 32}{space 2} .0515338{col 43}{space 1}   42.32{col 52}{space 3}0.000{col 60}{space 4}  2.08007{col 73}{space 3} 2.282079
+{txt}{hline 19}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. capture drop p_actual
+{txt}
+{com}. predict p_actual
+{txt}(option {bf:pr} assumed; Pr(ipo_dummy))
+(92,682 missing values generated)
+
+{com}. keep if e(sample)
+{txt}(92,682 observations deleted)
+
+{com}. 
+. g K_actual = K_total
+{txt}
+{com}. 
+. g K_nojobs=K_total
+{txt}
+{com}. replace K_nojobs= K_er + K_404 + K_sd if ///
+> year>=2012 & year<=2018 & publicfloat_mil>=75 & publicfloat_mil<700 
+{txt}(7,428 real changes made)
+
+{com}. replace K_nojobs= K_er if ///
+> year>=2012 & year<=2018 & publicfloat_mil>=0 & publicfloat_mil<75 
+{txt}(33,460 real changes made)
+
+{com}. replace ln_K_total = log(K_nojobs)
+{txt}(115,640 real changes made, 10,867 to missing)
+
+{com}. predict p_nojobs
+{txt}(option {bf:pr} assumed; Pr(ipo_dummy))
+(10,867 missing values generated)
+
+{com}. 
+. g K_nosox=K_total
+{txt}
+{com}. replace K_nosox= K_er + K_sd if ///
+> (year>=2003 & year<=2018 & publicfloat_mil>=700 & publicfloat_mil<.) | ///
+> (year>=2003 & year<=2011 & publicfloat_mil>=75 & publicfloat_mil<700) 
+{txt}(9,331 real changes made)
+
+{com}. replace K_nosox= 1/1000000  if ///
+> (year>=2012 & year<=2018 & publicfloat_mil>=75 & publicfloat_mil<700) 
+{txt}(7,610 real changes made)
+
+{com}. replace ln_K_total = log(K_nosox)
+{txt}(50,401 real changes made, 3,424 to missing)
+
+{com}. predict p_nosox
+{txt}(option {bf:pr} assumed; Pr(ipo_dummy))
+(10,012 missing values generated)
+
+{com}. 
+. g K_zerosd=.
+{txt}(116,703 missing values generated)
+
+{com}. replace K_zerosd= 1/1000000  if ///
+> (year>=2012 & year<=2018 & publicfloat_mil>=0 & publicfloat_mil<700)
+{txt}(44,690 real changes made)
+
+{com}. replace K_zerosd= K_er + K_404  if ///
+> (year>=2003 & year<=2018 & publicfloat_mil>=700 & publicfloat_mil<.) | ///
+> (year>=2003 & year<=2011 & publicfloat_mil>=75 & publicfloat_mil<700) 
+{txt}(9,920 real changes made)
+
+{com}. replace K_zerosd= K_er if ///
+> (year>=1992 & year<=2007 & publicfloat_mil>=0 & publicfloat_mil<25) | ///
+> (year>=2008 & year<=2011 & publicfloat_mil>=0 & publicfloat_mil<75)
+{txt}(46,355 real changes made)
+
+{com}. replace K_zerosd= K_er if ///
+> (year>=1992 & year<=2002 & publicfloat_mil>=25 & publicfloat_mil<.) | ///
+> (year>=2003 & year<=2007 & publicfloat_mil>=25 & publicfloat_mil<75)
+{txt}(15,738 real changes made)
+
+{com}. replace ln_K_total = log(K_zerosd)
+{txt}(101,927 real changes made, 5,710 to missing)
+
+{com}. predict p_zerosd
+{txt}(option {bf:pr} assumed; Pr(ipo_dummy))
+(6,355 missing values generated)
+
+{com}. 
+. g K_noreg=1/1000000
+{txt}
+{com}. replace ln_K_total = log(K_noreg) 
+{txt}(72,013 real changes made)
+
+{com}. predict p_noreg
+{txt}(option {bf:pr} assumed; Pr(ipo_dummy))
+
+{com}. 
+. g K_maxreg=.
+{txt}(116,703 missing values generated)
+
+{com}. *replace K_maxreg = K_er + K_sd
+. replace K_maxreg = K_er + K_sd if ///
+> year>=1992 & year<=2002
+{txt}(29,424 real changes made)
+
+{com}. replace K_maxreg = K_er + K_404 + K_sd if ///
+> year>=2003 & year<=2018
+{txt}(87,279 real changes made)
+
+{com}. replace ln_K_total = log(K_maxreg) 
+{txt}(116,703 real changes made, 349 to missing)
+
+{com}. predict p_maxreg
+{txt}(option {bf:pr} assumed; Pr(ipo_dummy))
+(349 missing values generated)
+
+{com}. 
+. g K_minreg=.
+{txt}(116,703 missing values generated)
+
+{com}. replace K_minreg = K_er  if ///
+> year>=1992 & year<=2011
+{txt}(70,861 real changes made)
+
+{com}. replace K_minreg = 1/1000000 if ///
+> year>=2012 & year<=2018 
+{txt}(45,842 real changes made)
+
+{com}. replace ln_K_total = log(K_minreg) 
+{txt}(113,253 real changes made, 6,793 to missing)
+
+{com}. predict p_minreg
+{txt}(option {bf:pr} assumed; Pr(ipo_dummy))
+(7,104 missing values generated)
+
+{com}. 
+. 
+. foreach x in actual nojobs nosox zerosd noreg minreg maxreg {c -(}
+{txt}  2{com}. g v_`x'=p_`x'*publicfloat_mil
+{txt}  3{com}. {c )-}
+{txt}(10,867 missing values generated)
+(10,012 missing values generated)
+(6,355 missing values generated)
+(7,104 missing values generated)
+(349 missing values generated)
+
+{com}. 
+. g post2000=year>=2000
+{txt}
+{com}. replace K_noreg=K_actual if post2000==0
+{txt}(15,331 real changes made)
+
+{com}. 
+. 
+. drop K_sd K_404 K_egc K_total
+{txt}
+{com}. 
+. foreach var of varlist K_* {c -(}
+{txt}  2{com}. g ratio_`var'=`var'/publicfloat_mil*100
+{txt}  3{com}. {c )-}
+{txt}
+{com}. 
+. 
+. foreach var of varlist p_* v_* {c -(}
+{txt}  2{com}. egen totall_`var'=sum(`var'), by(post2000)
+{txt}  3{com}. egen totyr_`var'=sum(`var'), by(year)
+{txt}  4{com}. {c )-}
+{txt}
+{com}. 
+. 
+. foreach var of varlist p_* {c -(}
+{txt}  2{com}. replace `var'=`var'*100
+{txt}  3{com}. {c )-}
+{txt}(116,703 real changes made)
+(105,836 real changes made)
+(106,691 real changes made)
+(110,348 real changes made)
+(116,703 real changes made)
+(116,354 real changes made)
+(109,599 real changes made)
+
+{com}. 
+. foreach var of varlist totall_v_* totyr_v_* {c -(}
+{txt}  2{com}. replace `var'=`var'/1000
+{txt}  3{com}. {c )-}
+{txt}(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+(116,703 real changes made)
+
+{com}. 
+. 
+. 
+. *Tabulate Counterfactual Simulation of Regulatory Costs and IPOs
+. collapse K* p_* v_* ratio_* totall_* totyr_*, by(post2000)
+{res}{txt}
+{com}. reshape long K_ p_ v_ totyr_p_ totall_p_ totall_v_ ratio_K_, i(post2000) j(scenario) string
+{txt}(j = actual er maxreg minreg nojobs noreg nosox zerosd)
+(variable {bf:p_er} not found)
+(variable {bf:v_er} not found)
+(variable {bf:totyr_p_er} not found)
+(variable {bf:totall_p_er} not found)
+(variable {bf:totall_v_er} not found)
+
+Data{col 36}Wide{col 43}->{col 48}Long
+{hline 77}
+Number of observations     {res}           2   {txt}->   {res}16          
+{txt}Number of variables        {res}          59   {txt}->   {res}16          
+{txt}j variable (8 values)                     ->   {res}scenario
+{txt}xij variables:
+             {res}K_actual K_er ... K_zerosd   {txt}->   {res}K_
+             p_actual p_er ... p_zerosd   {txt}->   {res}p_
+             v_actual v_er ... v_zerosd   {txt}->   {res}v_
+totyr_p_actual totyr_p_er ... totyr_p_zerosd{txt}-> {res}totyr_p_
+totall_p_actual totall_p_er ... totall_p_zerosd{txt}->{res}totall_p_
+totall_v_actual totall_v_er ... totall_v_zerosd{txt}->{res}totall_v_
+ratio_K_actual ratio_K_er ... ratio_K_zerosd{txt}-> {res}ratio_K_
+{txt}{hline 77}
+
+{com}. 
+. label var K_ "Regulatory costs (\textdollar m)"
+{txt}
+{com}. label var ratio_ "Regulatory costs / Public float (\%)"
+{txt}
+{com}. label var p_ "IPO probability (\%)"
+{txt}
+{com}. label var totyr_p_ "Yearly no. of IPOs"
+{txt}
+{com}. label var totall_p_ "Total no. of IPOs"
+{txt}
+{com}. label var totall_v_ "Total IPO public float (\textdollar b)"
+{txt}
+{com}. label var v_ "Average IPO public float (\textdollar m)"
+{txt}
+{com}. 
+. 
+. *Pre2000
+. estpost su K_ ratio_ p_ totyr_p_ totall_p_ totall_v_  if scenario== "actual" & post2000==0, d
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(skewn~)}{space 1}{space 1}{ralign 9:e(kurto~)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(p1)}{space 1}{space 1}{ralign 9:e(p5)}{space 1}{space 1}{ralign 9:e(p10)}{space 1}{space 1}{ralign 9:e(p25)}{space 1}{space 1}{ralign 9:e(p50)}{space 1}{space 1}{ralign 9:e(p75)}{space 1}{space 1}{ralign 9:e(p90)}{space 1}{space 1}{ralign 9:e(p95)}{space 1}{space 1}{ralign 9:e(p99)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:K_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.555019}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.555019}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.555019}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.555019}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.555019}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.555019}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.555019}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.555019}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.555019}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.555019}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.555019}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.555019}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.555019}}}{space 1}
+{space 0}{space 0}{ralign 12:ratio_K_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 62.62791}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 62.62791}}}{space 1}{space 1}{ralign 9:{res:{sf: 62.62791}}}{space 1}{space 1}{ralign 9:{res:{sf: 62.62791}}}{space 1}{space 1}{ralign 9:{res:{sf: 62.62791}}}{space 1}{space 1}{ralign 9:{res:{sf: 62.62791}}}{space 1}{space 1}{ralign 9:{res:{sf: 62.62791}}}{space 1}{space 1}{ralign 9:{res:{sf: 62.62791}}}{space 1}{space 1}{ralign 9:{res:{sf: 62.62791}}}{space 1}{space 1}{ralign 9:{res:{sf: 62.62791}}}{space 1}{space 1}{ralign 9:{res:{sf: 62.62791}}}{space 1}{space 1}{ralign 9:{res:{sf: 62.62791}}}{space 1}{space 1}{ralign 9:{res:{sf: 62.62791}}}{space 1}
+{space 0}{space 0}{ralign 12:p_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93365}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93365}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93365}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93365}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93365}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93365}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93365}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93365}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93365}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93365}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93365}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93365}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93365}}}{space 1}
+{space 0}{space 0}{ralign 12:totyr_p_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:  1922.52}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:  1922.52}}}{space 1}{space 1}{ralign 9:{res:{sf:  1922.52}}}{space 1}{space 1}{ralign 9:{res:{sf:  1922.52}}}{space 1}{space 1}{ralign 9:{res:{sf:  1922.52}}}{space 1}{space 1}{ralign 9:{res:{sf:  1922.52}}}{space 1}{space 1}{ralign 9:{res:{sf:  1922.52}}}{space 1}{space 1}{ralign 9:{res:{sf:  1922.52}}}{space 1}{space 1}{ralign 9:{res:{sf:  1922.52}}}{space 1}{space 1}{ralign 9:{res:{sf:  1922.52}}}{space 1}{space 1}{ralign 9:{res:{sf:  1922.52}}}{space 1}{space 1}{ralign 9:{res:{sf:  1922.52}}}{space 1}{space 1}{ralign 9:{res:{sf:  1922.52}}}{space 1}
+{space 0}{space 0}{ralign 12:totall_p_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 13787.73}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 13787.73}}}{space 1}{space 1}{ralign 9:{res:{sf: 13787.73}}}{space 1}{space 1}{ralign 9:{res:{sf: 13787.73}}}{space 1}{space 1}{ralign 9:{res:{sf: 13787.73}}}{space 1}{space 1}{ralign 9:{res:{sf: 13787.73}}}{space 1}{space 1}{ralign 9:{res:{sf: 13787.73}}}{space 1}{space 1}{ralign 9:{res:{sf: 13787.73}}}{space 1}{space 1}{ralign 9:{res:{sf: 13787.73}}}{space 1}{space 1}{ralign 9:{res:{sf: 13787.73}}}{space 1}{space 1}{ralign 9:{res:{sf: 13787.73}}}{space 1}{space 1}{ralign 9:{res:{sf: 13787.73}}}{space 1}{space 1}{ralign 9:{res:{sf: 13787.73}}}{space 1}
+{space 0}{space 0}{ralign 12:totall_v_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 653.5795}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 653.5795}}}{space 1}{space 1}{ralign 9:{res:{sf: 653.5795}}}{space 1}{space 1}{ralign 9:{res:{sf: 653.5795}}}{space 1}{space 1}{ralign 9:{res:{sf: 653.5795}}}{space 1}{space 1}{ralign 9:{res:{sf: 653.5795}}}{space 1}{space 1}{ralign 9:{res:{sf: 653.5795}}}{space 1}{space 1}{ralign 9:{res:{sf: 653.5795}}}{space 1}{space 1}{ralign 9:{res:{sf: 653.5795}}}{space 1}{space 1}{ralign 9:{res:{sf: 653.5795}}}{space 1}{space 1}{ralign 9:{res:{sf: 653.5795}}}{space 1}{space 1}{ralign 9:{res:{sf: 653.5795}}}{space 1}{space 1}{ralign 9:{res:{sf: 653.5795}}}{space 1}
+
+{com}. est store actual_pre
+{txt}
+{com}. 
+. *Post2000
+. foreach type in actual nosox nojobs noreg {c -(}
+{txt}  2{com}. eststo clear
+{txt}  3{com}. estpost su K_ ratio_ p_ totyr_p_ totall_p_ totall_v_  if scenario== "`type'" & post2000==1, d
+{txt}  4{com}. est store `type'
+{txt}  5{com}. {c )-}
+
+{txt}{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(skewn~)}{space 1}{space 1}{ralign 9:e(kurto~)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(p1)}{space 1}{space 1}{ralign 9:e(p5)}{space 1}{space 1}{ralign 9:e(p10)}{space 1}{space 1}{ralign 9:e(p25)}{space 1}{space 1}{ralign 9:e(p50)}{space 1}{space 1}{ralign 9:e(p75)}{space 1}{space 1}{ralign 9:e(p90)}{space 1}{space 1}{ralign 9:e(p95)}{space 1}{space 1}{ralign 9:e(p99)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:K_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:  4.50363}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:  4.50363}}}{space 1}{space 1}{ralign 9:{res:{sf:  4.50363}}}{space 1}{space 1}{ralign 9:{res:{sf:  4.50363}}}{space 1}{space 1}{ralign 9:{res:{sf:  4.50363}}}{space 1}{space 1}{ralign 9:{res:{sf:  4.50363}}}{space 1}{space 1}{ralign 9:{res:{sf:  4.50363}}}{space 1}{space 1}{ralign 9:{res:{sf:  4.50363}}}{space 1}{space 1}{ralign 9:{res:{sf:  4.50363}}}{space 1}{space 1}{ralign 9:{res:{sf:  4.50363}}}{space 1}{space 1}{ralign 9:{res:{sf:  4.50363}}}{space 1}{space 1}{ralign 9:{res:{sf:  4.50363}}}{space 1}{space 1}{ralign 9:{res:{sf:  4.50363}}}{space 1}
+{space 0}{space 0}{ralign 12:ratio_K_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09986}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09986}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09986}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09986}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09986}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09986}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09986}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09986}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09986}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09986}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09986}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09986}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09986}}}{space 1}
+{space 0}{space 0}{ralign 12:p_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93437}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93437}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93437}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93437}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93437}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93437}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93437}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93437}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93437}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93437}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93437}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93437}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.93437}}}{space 1}
+{space 0}{space 0}{ralign 12:totyr_p_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 4969.861}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 4969.861}}}{space 1}{space 1}{ralign 9:{res:{sf: 4969.861}}}{space 1}{space 1}{ralign 9:{res:{sf: 4969.861}}}{space 1}{space 1}{ralign 9:{res:{sf: 4969.861}}}{space 1}{space 1}{ralign 9:{res:{sf: 4969.861}}}{space 1}{space 1}{ralign 9:{res:{sf: 4969.861}}}{space 1}{space 1}{ralign 9:{res:{sf: 4969.861}}}{space 1}{space 1}{ralign 9:{res:{sf: 4969.861}}}{space 1}{space 1}{ralign 9:{res:{sf: 4969.861}}}{space 1}{space 1}{ralign 9:{res:{sf: 4969.861}}}{space 1}{space 1}{ralign 9:{res:{sf: 4969.861}}}{space 1}{space 1}{ralign 9:{res:{sf: 4969.861}}}{space 1}
+{space 0}{space 0}{ralign 12:totall_p_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 91168.27}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 91168.27}}}{space 1}{space 1}{ralign 9:{res:{sf: 91168.27}}}{space 1}{space 1}{ralign 9:{res:{sf: 91168.27}}}{space 1}{space 1}{ralign 9:{res:{sf: 91168.27}}}{space 1}{space 1}{ralign 9:{res:{sf: 91168.27}}}{space 1}{space 1}{ralign 9:{res:{sf: 91168.27}}}{space 1}{space 1}{ralign 9:{res:{sf: 91168.27}}}{space 1}{space 1}{ralign 9:{res:{sf: 91168.27}}}{space 1}{space 1}{ralign 9:{res:{sf: 91168.27}}}{space 1}{space 1}{ralign 9:{res:{sf: 91168.27}}}{space 1}{space 1}{ralign 9:{res:{sf: 91168.27}}}{space 1}{space 1}{ralign 9:{res:{sf: 91168.27}}}{space 1}
+{space 0}{space 0}{ralign 12:totall_v_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 9475.021}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 9475.021}}}{space 1}{space 1}{ralign 9:{res:{sf: 9475.021}}}{space 1}{space 1}{ralign 9:{res:{sf: 9475.021}}}{space 1}{space 1}{ralign 9:{res:{sf: 9475.021}}}{space 1}{space 1}{ralign 9:{res:{sf: 9475.021}}}{space 1}{space 1}{ralign 9:{res:{sf: 9475.021}}}{space 1}{space 1}{ralign 9:{res:{sf: 9475.021}}}{space 1}{space 1}{ralign 9:{res:{sf: 9475.021}}}{space 1}{space 1}{ralign 9:{res:{sf: 9475.021}}}{space 1}{space 1}{ralign 9:{res:{sf: 9475.021}}}{space 1}{space 1}{ralign 9:{res:{sf: 9475.021}}}{space 1}{space 1}{ralign 9:{res:{sf: 9475.021}}}{space 1}
+
+{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(skewn~)}{space 1}{space 1}{ralign 9:e(kurto~)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(p1)}{space 1}{space 1}{ralign 9:e(p5)}{space 1}{space 1}{ralign 9:e(p10)}{space 1}{space 1}{ralign 9:e(p25)}{space 1}{space 1}{ralign 9:e(p50)}{space 1}{space 1}{ralign 9:e(p75)}{space 1}{space 1}{ralign 9:e(p90)}{space 1}{space 1}{ralign 9:e(p95)}{space 1}{space 1}{ralign 9:e(p99)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:K_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.606913}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.606913}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.606913}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.606913}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.606913}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.606913}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.606913}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.606913}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.606913}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.606913}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.606913}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.606913}}}{space 1}{space 1}{ralign 9:{res:{sf: 4.606913}}}{space 1}
+{space 0}{space 0}{ralign 12:ratio_K_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09981}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09981}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09981}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09981}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09981}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09981}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09981}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09981}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09981}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09981}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09981}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09981}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.09981}}}{space 1}
+{space 0}{space 0}{ralign 12:p_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.90353}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.90353}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.90353}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.90353}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.90353}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.90353}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.90353}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.90353}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.90353}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.90353}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.90353}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.90353}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.90353}}}{space 1}
+{space 0}{space 0}{ralign 12:totyr_p_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 4553.069}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 4553.069}}}{space 1}{space 1}{ralign 9:{res:{sf: 4553.069}}}{space 1}{space 1}{ralign 9:{res:{sf: 4553.069}}}{space 1}{space 1}{ralign 9:{res:{sf: 4553.069}}}{space 1}{space 1}{ralign 9:{res:{sf: 4553.069}}}{space 1}{space 1}{ralign 9:{res:{sf: 4553.069}}}{space 1}{space 1}{ralign 9:{res:{sf: 4553.069}}}{space 1}{space 1}{ralign 9:{res:{sf: 4553.069}}}{space 1}{space 1}{ralign 9:{res:{sf: 4553.069}}}{space 1}{space 1}{ralign 9:{res:{sf: 4553.069}}}{space 1}{space 1}{ralign 9:{res:{sf: 4553.069}}}{space 1}{space 1}{ralign 9:{res:{sf: 4553.069}}}{space 1}
+{space 0}{space 0}{ralign 12:totall_p_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 83490.71}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 83490.71}}}{space 1}{space 1}{ralign 9:{res:{sf: 83490.71}}}{space 1}{space 1}{ralign 9:{res:{sf: 83490.71}}}{space 1}{space 1}{ralign 9:{res:{sf: 83490.71}}}{space 1}{space 1}{ralign 9:{res:{sf: 83490.71}}}{space 1}{space 1}{ralign 9:{res:{sf: 83490.71}}}{space 1}{space 1}{ralign 9:{res:{sf: 83490.71}}}{space 1}{space 1}{ralign 9:{res:{sf: 83490.71}}}{space 1}{space 1}{ralign 9:{res:{sf: 83490.71}}}{space 1}{space 1}{ralign 9:{res:{sf: 83490.71}}}{space 1}{space 1}{ralign 9:{res:{sf: 83490.71}}}{space 1}{space 1}{ralign 9:{res:{sf: 83490.71}}}{space 1}
+{space 0}{space 0}{ralign 12:totall_v_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 9249.769}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 9249.769}}}{space 1}{space 1}{ralign 9:{res:{sf: 9249.769}}}{space 1}{space 1}{ralign 9:{res:{sf: 9249.769}}}{space 1}{space 1}{ralign 9:{res:{sf: 9249.769}}}{space 1}{space 1}{ralign 9:{res:{sf: 9249.769}}}{space 1}{space 1}{ralign 9:{res:{sf: 9249.769}}}{space 1}{space 1}{ralign 9:{res:{sf: 9249.769}}}{space 1}{space 1}{ralign 9:{res:{sf: 9249.769}}}{space 1}{space 1}{ralign 9:{res:{sf: 9249.769}}}{space 1}{space 1}{ralign 9:{res:{sf: 9249.769}}}{space 1}{space 1}{ralign 9:{res:{sf: 9249.769}}}{space 1}{space 1}{ralign 9:{res:{sf: 9249.769}}}{space 1}
+
+{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(skewn~)}{space 1}{space 1}{ralign 9:e(kurto~)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(p1)}{space 1}{space 1}{ralign 9:e(p5)}{space 1}{space 1}{ralign 9:e(p10)}{space 1}{space 1}{ralign 9:e(p25)}{space 1}{space 1}{ralign 9:e(p50)}{space 1}{space 1}{ralign 9:e(p75)}{space 1}{space 1}{ralign 9:e(p90)}{space 1}{space 1}{ralign 9:e(p95)}{space 1}{space 1}{ralign 9:e(p99)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:K_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.182545}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.182545}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.182545}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.182545}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.182545}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.182545}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.182545}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.182545}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.182545}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.182545}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.182545}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.182545}}}{space 1}{space 1}{ralign 9:{res:{sf: 5.182545}}}{space 1}
+{space 0}{space 0}{ralign 12:ratio_K_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.00461}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.00461}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.00461}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.00461}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.00461}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.00461}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.00461}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.00461}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.00461}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.00461}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.00461}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.00461}}}{space 1}{space 1}{ralign 9:{res:{sf: 70.00461}}}{space 1}
+{space 0}{space 0}{ralign 12:p_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.91275}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.91275}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.91275}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.91275}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.91275}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.91275}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.91275}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.91275}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.91275}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.91275}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.91275}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.91275}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.91275}}}{space 1}
+{space 0}{space 0}{ralign 12:totyr_p_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 4518.141}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 4518.141}}}{space 1}{space 1}{ralign 9:{res:{sf: 4518.141}}}{space 1}{space 1}{ralign 9:{res:{sf: 4518.141}}}{space 1}{space 1}{ralign 9:{res:{sf: 4518.141}}}{space 1}{space 1}{ralign 9:{res:{sf: 4518.141}}}{space 1}{space 1}{ralign 9:{res:{sf: 4518.141}}}{space 1}{space 1}{ralign 9:{res:{sf: 4518.141}}}{space 1}{space 1}{ralign 9:{res:{sf: 4518.141}}}{space 1}{space 1}{ralign 9:{res:{sf: 4518.141}}}{space 1}{space 1}{ralign 9:{res:{sf: 4518.141}}}{space 1}{space 1}{ralign 9:{res:{sf: 4518.141}}}{space 1}{space 1}{ralign 9:{res:{sf: 4518.141}}}{space 1}
+{space 0}{space 0}{ralign 12:totall_p_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 82730.52}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 82730.52}}}{space 1}{space 1}{ralign 9:{res:{sf: 82730.52}}}{space 1}{space 1}{ralign 9:{res:{sf: 82730.52}}}{space 1}{space 1}{ralign 9:{res:{sf: 82730.52}}}{space 1}{space 1}{ralign 9:{res:{sf: 82730.52}}}{space 1}{space 1}{ralign 9:{res:{sf: 82730.52}}}{space 1}{space 1}{ralign 9:{res:{sf: 82730.52}}}{space 1}{space 1}{ralign 9:{res:{sf: 82730.52}}}{space 1}{space 1}{ralign 9:{res:{sf: 82730.52}}}{space 1}{space 1}{ralign 9:{res:{sf: 82730.52}}}{space 1}{space 1}{ralign 9:{res:{sf: 82730.52}}}{space 1}{space 1}{ralign 9:{res:{sf: 82730.52}}}{space 1}
+{space 0}{space 0}{ralign 12:totall_v_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 8517.331}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 8517.331}}}{space 1}{space 1}{ralign 9:{res:{sf: 8517.331}}}{space 1}{space 1}{ralign 9:{res:{sf: 8517.331}}}{space 1}{space 1}{ralign 9:{res:{sf: 8517.331}}}{space 1}{space 1}{ralign 9:{res:{sf: 8517.331}}}{space 1}{space 1}{ralign 9:{res:{sf: 8517.331}}}{space 1}{space 1}{ralign 9:{res:{sf: 8517.331}}}{space 1}{space 1}{ralign 9:{res:{sf: 8517.331}}}{space 1}{space 1}{ralign 9:{res:{sf: 8517.331}}}{space 1}{space 1}{ralign 9:{res:{sf: 8517.331}}}{space 1}{space 1}{ralign 9:{res:{sf: 8517.331}}}{space 1}{space 1}{ralign 9:{res:{sf: 8517.331}}}{space 1}
+
+{space 0}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 9:e(count)}{space 1}{space 1}{ralign 9:e(sum_w)}{space 1}{space 1}{ralign 9:e(mean)}{space 1}{space 1}{ralign 9:e(Var)}{space 1}{space 1}{ralign 9:e(sd)}{space 1}{space 1}{ralign 9:e(skewn~)}{space 1}{space 1}{ralign 9:e(kurto~)}{space 1}{space 1}{ralign 9:e(sum)}{space 1}{space 1}{ralign 9:e(min)}{space 1}{space 1}{ralign 9:e(max)}{space 1}{space 1}{ralign 9:e(p1)}{space 1}{space 1}{ralign 9:e(p5)}{space 1}{space 1}{ralign 9:e(p10)}{space 1}{space 1}{ralign 9:e(p25)}{space 1}{space 1}{ralign 9:e(p50)}{space 1}{space 1}{ralign 9:e(p75)}{space 1}{space 1}{ralign 9:e(p90)}{space 1}{space 1}{ralign 9:e(p95)}{space 1}{space 1}{ralign 9:e(p99)}{space 1}
+{space 0}{hline 13}{c   +}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}{hline 11}
+{space 0}{space 0}{ralign 12:K_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.00e-06}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.00e-06}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.00e-06}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.00e-06}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.00e-06}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.00e-06}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.00e-06}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.00e-06}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.00e-06}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.00e-06}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.00e-06}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.00e-06}}}{space 1}{space 1}{ralign 9:{res:{sf: 1.00e-06}}}{space 1}
+{space 0}{space 0}{ralign 12:ratio_K_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: .0000156}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: .0000156}}}{space 1}{space 1}{ralign 9:{res:{sf: .0000156}}}{space 1}{space 1}{ralign 9:{res:{sf: .0000156}}}{space 1}{space 1}{ralign 9:{res:{sf: .0000156}}}{space 1}{space 1}{ralign 9:{res:{sf: .0000156}}}{space 1}{space 1}{ralign 9:{res:{sf: .0000156}}}{space 1}{space 1}{ralign 9:{res:{sf: .0000156}}}{space 1}{space 1}{ralign 9:{res:{sf: .0000156}}}{space 1}{space 1}{ralign 9:{res:{sf: .0000156}}}{space 1}{space 1}{ralign 9:{res:{sf: .0000156}}}{space 1}{space 1}{ralign 9:{res:{sf: .0000156}}}{space 1}{space 1}{ralign 9:{res:{sf: .0000156}}}{space 1}
+{space 0}{space 0}{ralign 12:p_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.80208}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.80208}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.80208}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.80208}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.80208}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.80208}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.80208}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.80208}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.80208}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.80208}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.80208}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.80208}}}{space 1}{space 1}{ralign 9:{res:{sf: 89.80208}}}{space 1}
+{space 0}{space 0}{ralign 12:totyr_p_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 4962.551}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 4962.551}}}{space 1}{space 1}{ralign 9:{res:{sf: 4962.551}}}{space 1}{space 1}{ralign 9:{res:{sf: 4962.551}}}{space 1}{space 1}{ralign 9:{res:{sf: 4962.551}}}{space 1}{space 1}{ralign 9:{res:{sf: 4962.551}}}{space 1}{space 1}{ralign 9:{res:{sf: 4962.551}}}{space 1}{space 1}{ralign 9:{res:{sf: 4962.551}}}{space 1}{space 1}{ralign 9:{res:{sf: 4962.551}}}{space 1}{space 1}{ralign 9:{res:{sf: 4962.551}}}{space 1}{space 1}{ralign 9:{res:{sf: 4962.551}}}{space 1}{space 1}{ralign 9:{res:{sf: 4962.551}}}{space 1}{space 1}{ralign 9:{res:{sf: 4962.551}}}{space 1}
+{space 0}{space 0}{ralign 12:totall_p_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 91034.17}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 91034.17}}}{space 1}{space 1}{ralign 9:{res:{sf: 91034.17}}}{space 1}{space 1}{ralign 9:{res:{sf: 91034.17}}}{space 1}{space 1}{ralign 9:{res:{sf: 91034.17}}}{space 1}{space 1}{ralign 9:{res:{sf: 91034.17}}}{space 1}{space 1}{ralign 9:{res:{sf: 91034.17}}}{space 1}{space 1}{ralign 9:{res:{sf: 91034.17}}}{space 1}{space 1}{ralign 9:{res:{sf: 91034.17}}}{space 1}{space 1}{ralign 9:{res:{sf: 91034.17}}}{space 1}{space 1}{ralign 9:{res:{sf: 91034.17}}}{space 1}{space 1}{ralign 9:{res:{sf: 91034.17}}}{space 1}{space 1}{ralign 9:{res:{sf: 91034.17}}}{space 1}
+{space 0}{space 0}{ralign 12:totall_v_}{space 1}{c |}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf:        1}}}{space 1}{space 1}{ralign 9:{res:{sf: 9461.146}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf:        .}}}{space 1}{space 1}{ralign 9:{res:{sf: 9461.146}}}{space 1}{space 1}{ralign 9:{res:{sf: 9461.146}}}{space 1}{space 1}{ralign 9:{res:{sf: 9461.146}}}{space 1}{space 1}{ralign 9:{res:{sf: 9461.146}}}{space 1}{space 1}{ralign 9:{res:{sf: 9461.146}}}{space 1}{space 1}{ralign 9:{res:{sf: 9461.146}}}{space 1}{space 1}{ralign 9:{res:{sf: 9461.146}}}{space 1}{space 1}{ralign 9:{res:{sf: 9461.146}}}{space 1}{space 1}{ralign 9:{res:{sf: 9461.146}}}{space 1}{space 1}{ralign 9:{res:{sf: 9461.146}}}{space 1}{space 1}{ralign 9:{res:{sf: 9461.146}}}{space 1}{space 1}{ralign 9:{res:{sf: 9461.146}}}{space 1}
+
+{com}. 
+. esttab actual_pre actual nosox nojobs noreg using "$output/Table7.tex", replace ///
+> mtitles("{c -(}Actual regulation{c )-}" "{c -(}Actual regulation{c )-}" "{c -(}No SOX{c )-}" "{c -(}No JOBS Act{c )-}" "{c -(}Zero regulation{c )-}" ) ///
+> collabels(none)  width(\hsize) ///
+> cells("mean(fmt(3))") label nonumber noobs booktabs
+{res}{txt}(output written to {browse  `"F:/Dropbox/bunching_JOBS/JFE_replication/output/Table7.tex"'})
+
+{com}. 
+. /*
+> Inserting the following Tex code after column titles to adjust table foramt:
+> & (1)   & (2)   & (3)  & (4)  & (5)  \\
+> \midrule
+> & Pre-2000 & \multicolumn{c -(}4{c )-}{c -(}c{c )-}{c -(}{c -(}Post-2000{c )-}{c )-} \\
+> \cmidrule(lr){c -(}2-2{c )-} \cmidrule(lr){c -(}3-6{c )-} 
+> */
+. 
+. 
+{txt}end of do-file
+
+{com}. 
+. 
+. ***********
+. * Table 8
+. ***********
+. do Table8.do
+{txt}
+{com}. *************************************
+. *Replication code for Ewens Xiao and Xu 2023
+. *************************************
+. ****************
+. * Table 8
+. ****************
+. /*Note: coefficients and standard errors for marginal effects are multipled by 100 in the final table to represent the percentage effect. */ 
+. 
+. 
+. *Logit regression of going private
+. use $input/goingprivate_reg_sample, clear
+{txt}
+{com}. 
+. global controls lev_bk ln_at ppe investratio1 sales_gr mb ret_ann lnnumest tot_io
+{txt}
+{com}. 
+. eststo clear
+{txt}
+{com}. 
+. logit F1_GPT_dummy ln_K_total ln_publicfloat_mil $controls i.sic1_yr_fe i.state_fe, iterate(200) cluster(cik)
+
+{res}{txt}Iteration 0:{space 2}Log pseudolikelihood = {res:-15747.817}  
+Iteration 1:{space 2}Log pseudolikelihood = {res:-15735.388}  
+Iteration 2:{space 2}Log pseudolikelihood = {res:-15735.376}  
+Iteration 3:{space 2}Log pseudolikelihood = {res:-15735.376}  
+{res}
+{txt}{col 1}Logistic regression{col 57}{lalign 13:Number of obs}{col 70} = {res}{ralign 6:47,730}
+{txt}{col 57}{lalign 13:Wald chi2({res:29})}{col 70} = {res}{ralign 6:25.07}
+{txt}{col 57}{lalign 13:Prob > chi2}{col 70} = {res}{ralign 6:0.6747}
+{txt}{col 1}{lalign 20:Log pseudolikelihood}{col 21} = {res}{ralign 10:-15735.376}{txt}{col 57}{lalign 13:Pseudo R2}{col 70} = {res}{ralign 6:0.0008}
+
+{txt}{ralign 84:(Std. err. adjusted for {res:4,299} clusters in {res:cik})}
+{hline 19}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 20}{c |}{col 32}    Robust
+{col 1}      F1_GPT_dummy{col 20}{c |} Coefficient{col 32}  std. err.{col 44}      z{col 52}   P>|z|{col 60}     [95% con{col 73}f. interval]
+{hline 19}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}ln_K_total {c |}{col 20}{res}{space 2} .0052372{col 32}{space 2}  .005255{col 43}{space 1}    1.00{col 52}{space 3}0.319{col 60}{space 4}-.0050625{col 73}{space 3} .0155369
+{txt}ln_publicfloat_mil {c |}{col 20}{res}{space 2} .0059403{col 32}{space 2} .0052253{col 43}{space 1}    1.14{col 52}{space 3}0.256{col 60}{space 4}-.0043012{col 73}{space 3} .0161818
+{txt}{space 12}lev_bk {c |}{col 20}{res}{space 2} .0063571{col 32}{space 2} .0052831{col 43}{space 1}    1.20{col 52}{space 3}0.229{col 60}{space 4}-.0039976{col 73}{space 3} .0167118
+{txt}{space 13}ln_at {c |}{col 20}{res}{space 2}-.0049182{col 32}{space 2} .0052534{col 43}{space 1}   -0.94{col 52}{space 3}0.349{col 60}{space 4}-.0152146{col 73}{space 3} .0053782
+{txt}{space 15}ppe {c |}{col 20}{res}{space 2} .0000184{col 32}{space 2} .0051651{col 43}{space 1}    0.00{col 52}{space 3}0.997{col 60}{space 4}-.0101049{col 73}{space 3} .0101417
+{txt}{space 6}investratio1 {c |}{col 20}{res}{space 2} .0083268{col 32}{space 2} .0053133{col 43}{space 1}    1.57{col 52}{space 3}0.117{col 60}{space 4}-.0020871{col 73}{space 3} .0187406
+{txt}{space 10}sales_gr {c |}{col 20}{res}{space 2} .0072289{col 32}{space 2} .0053104{col 43}{space 1}    1.36{col 52}{space 3}0.173{col 60}{space 4}-.0031793{col 73}{space 3} .0176371
+{txt}{space 16}mb {c |}{col 20}{res}{space 2}-.0051536{col 32}{space 2} .0052697{col 43}{space 1}   -0.98{col 52}{space 3}0.328{col 60}{space 4}-.0154821{col 73}{space 3} .0051749
+{txt}{space 11}ret_ann {c |}{col 20}{res}{space 2}-.0017797{col 32}{space 2} .0052983{col 43}{space 1}   -0.34{col 52}{space 3}0.737{col 60}{space 4}-.0121643{col 73}{space 3} .0086048
+{txt}{space 10}lnnumest {c |}{col 20}{res}{space 2}-.0062682{col 32}{space 2} .0053062{col 43}{space 1}   -1.18{col 52}{space 3}0.237{col 60}{space 4}-.0166681{col 73}{space 3} .0041317
+{txt}{space 12}tot_io {c |}{col 20}{res}{space 2}-.0030326{col 32}{space 2} .0052336{col 43}{space 1}   -0.58{col 52}{space 3}0.562{col 60}{space 4}-.0132904{col 73}{space 3} .0072251
+{txt}{space 18} {c |}
+{space 8}sic1_yr_fe {c |}
+{space 16}1  {c |}{col 20}{res}{space 2} .0728925{col 32}{space 2} .0689616{col 43}{space 1}    1.06{col 52}{space 3}0.291{col 60}{space 4}-.0622697{col 73}{space 3} .2080547
+{txt}{space 16}2  {c |}{col 20}{res}{space 2} .0787381{col 32}{space 2} .0667783{col 43}{space 1}    1.18{col 52}{space 3}0.238{col 60}{space 4} -.052145{col 73}{space 3} .2096212
+{txt}{space 16}3  {c |}{col 20}{res}{space 2} .0666347{col 32}{space 2} .0660771{col 43}{space 1}    1.01{col 52}{space 3}0.313{col 60}{space 4}-.0628741{col 73}{space 3} .1961434
+{txt}{space 16}4  {c |}{col 20}{res}{space 2} .0010295{col 32}{space 2} .0663888{col 43}{space 1}    0.02{col 52}{space 3}0.988{col 60}{space 4}-.1290901{col 73}{space 3} .1311491
+{txt}{space 16}5  {c |}{col 20}{res}{space 2}-.0077194{col 32}{space 2} .0675806{col 43}{space 1}   -0.11{col 52}{space 3}0.909{col 60}{space 4}-.1401751{col 73}{space 3} .1247362
+{txt}{space 16}6  {c |}{col 20}{res}{space 2} .0935342{col 32}{space 2} .0670409{col 43}{space 1}    1.40{col 52}{space 3}0.163{col 60}{space 4}-.0378635{col 73}{space 3} .2249318
+{txt}{space 16}7  {c |}{col 20}{res}{space 2} .0912627{col 32}{space 2} .0664185{col 43}{space 1}    1.37{col 52}{space 3}0.169{col 60}{space 4}-.0389151{col 73}{space 3} .2214405
+{txt}{space 16}8  {c |}{col 20}{res}{space 2}  .053574{col 32}{space 2} .0680957{col 43}{space 1}    0.79{col 52}{space 3}0.431{col 60}{space 4}-.0798912{col 73}{space 3} .1870392
+{txt}{space 16}9  {c |}{col 20}{res}{space 2} .0359179{col 32}{space 2} .0664982{col 43}{space 1}    0.54{col 52}{space 3}0.589{col 60}{space 4}-.0944162{col 73}{space 3} .1662519
+{txt}{space 18} {c |}
+{space 10}state_fe {c |}
+{space 16}1  {c |}{col 20}{res}{space 2}-.0285404{col 32}{space 2} .0677725{col 43}{space 1}   -0.42{col 52}{space 3}0.674{col 60}{space 4}-.1613721{col 73}{space 3} .1042913
+{txt}{space 16}2  {c |}{col 20}{res}{space 2}-.0131355{col 32}{space 2} .0660349{col 43}{space 1}   -0.20{col 52}{space 3}0.842{col 60}{space 4}-.1425615{col 73}{space 3} .1162905
+{txt}{space 16}3  {c |}{col 20}{res}{space 2} .0976845{col 32}{space 2} .0680441{col 43}{space 1}    1.44{col 52}{space 3}0.151{col 60}{space 4}-.0356795{col 73}{space 3} .2310486
+{txt}{space 16}4  {c |}{col 20}{res}{space 2} .0437667{col 32}{space 2} .0675245{col 43}{space 1}    0.65{col 52}{space 3}0.517{col 60}{space 4}-.0885789{col 73}{space 3} .1761123
+{txt}{space 16}5  {c |}{col 20}{res}{space 2}-.0105022{col 32}{space 2} .0670818{col 43}{space 1}   -0.16{col 52}{space 3}0.876{col 60}{space 4}  -.14198{col 73}{space 3} .1209757
+{txt}{space 16}6  {c |}{col 20}{res}{space 2} .0099651{col 32}{space 2} .0669665{col 43}{space 1}    0.15{col 52}{space 3}0.882{col 60}{space 4}-.1212868{col 73}{space 3}  .141217
+{txt}{space 16}7  {c |}{col 20}{res}{space 2} -.030934{col 32}{space 2} .0669258{col 43}{space 1}   -0.46{col 52}{space 3}0.644{col 60}{space 4}-.1621062{col 73}{space 3} .1002382
+{txt}{space 16}8  {c |}{col 20}{res}{space 2} .0322347{col 32}{space 2} .0676254{col 43}{space 1}    0.48{col 52}{space 3}0.634{col 60}{space 4}-.1003087{col 73}{space 3} .1647781
+{txt}{space 16}9  {c |}{col 20}{res}{space 2} .0660344{col 32}{space 2} .0660933{col 43}{space 1}    1.00{col 52}{space 3}0.318{col 60}{space 4}-.0635062{col 73}{space 3} .1955749
+{txt}{space 18} {c |}
+{space 13}_cons {c |}{col 20}{res}{space 2} 2.055834{col 32}{space 2} .1012069{col 43}{space 1}   20.31{col 52}{space 3}0.000{col 60}{space 4} 1.857472{col 73}{space 3} 2.254196
+{txt}{hline 19}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. estadd local FE1 "Yes"
+
+{txt}added macro:
+                e(FE1) : "{res:Yes}"
+
+{com}. estadd local FE2 "Yes"
+
+{txt}added macro:
+                e(FE2) : "{res:Yes}"
+
+{com}. eststo
+{txt}({res}est1{txt} stored)
+
+{com}. 
+. margins, dydx(*) atmeans post
+{res}
+{txt}{col 1}Conditional marginal effects{col 57}{lalign 13:Number of obs}{col 70} = {res}{ralign 6:47,730}
+{txt}{col 1}Model VCE: {res:Robust}
+
+{txt}{p2colset 1 13 13 2}{...}
+{p2col:Expression:}{res:Pr(F1_GPT_dummy), predict()}{p_end}
+{p2col:dy/dx wrt:}{res:ln_K_total ln_publicfloat_mil lev_bk ln_at ppe investratio1 sales_gr mb ret_ann lnnumest tot_io 1.sic1_yr_fe 2.sic1_yr_fe 3.sic1_yr_fe 4.sic1_yr_fe 5.sic1_yr_fe 6.sic1_yr_fe 7.sic1_yr_fe 8.sic1_yr_fe 9.sic1_yr_fe 1.state_fe 2.state_fe 3.state_fe 4.state_fe 5.state_fe 6.state_fe 7.state_fe 8.state_fe 9.state_fe}{p_end}
+{p2colreset}{...}
+{lalign 4:At: }{space 0}{lalign 18:ln_K_total} = {res:{ralign 8:4.511272}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:ln_publicfloat_mil} = {res:{ralign 8:4.493882}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:lev_bk} = {res:{ralign 8:4.483239}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:ln_at} = {res:{ralign 8:4.4956}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:ppe} = {res:{ralign 8:4.487199}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:investratio1} = {res:{ralign 8:4.505133}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:sales_gr} = {res:{ralign 8:4.473413}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:mb} = {res:{ralign 8:4.494825}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:ret_ann} = {res:{ralign 8:4.506348}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:lnnumest} = {res:{ralign 8:4.493861}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:tot_io} = {res:{ralign 8:4.509889}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:0.sic1_yr_fe} = {res:{ralign 8:.0984287}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:1.sic1_yr_fe} = {res:{ralign 8:.1015085}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:2.sic1_yr_fe} = {res:{ralign 8:.0993296}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:3.sic1_yr_fe} = {res:{ralign 8:.0985963}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:4.sic1_yr_fe} = {res:{ralign 8:.1007752}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:5.sic1_yr_fe} = {res:{ralign 8:.1012152}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:6.sic1_yr_fe} = {res:{ralign 8:.1031427}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:7.sic1_yr_fe} = {res:{ralign 8:.1001676}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:8.sic1_yr_fe} = {res:{ralign 8:.0974021}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:9.sic1_yr_fe} = {res:{ralign 8:.0994343}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:0.state_fe} = {res:{ralign 8:.102137}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:1.state_fe} = {res:{ralign 8:.0962078}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:2.state_fe} = {res:{ralign 8:.1021999}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:3.state_fe} = {res:{ralign 8:.1014037}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:4.state_fe} = {res:{ralign 8:.0984287}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:5.state_fe} = {res:{ralign 8:.1005657}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:6.state_fe} = {res:{ralign 8:.0977582}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:7.state_fe} = {res:{ralign 8:.09956}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:8.state_fe} = {res:{ralign 8:.0998114}} {txt:(mean)}
+{lalign 4:}{space 0}{lalign 18:9.state_fe} = {res:{ralign 8:.1019275}} {txt:(mean)}
+
+{res}{txt}{hline 19}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 20}{c |}{col 32} Delta-method
+{col 20}{c |}      dy/dx{col 32}   std. err.{col 44}      z{col 52}   P>|z|{col 60}     [95% con{col 73}f. interval]
+{hline 19}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}ln_K_total {c |}{col 20}{res}{space 2} .0004798{col 32}{space 2} .0004814{col 43}{space 1}    1.00{col 52}{space 3}0.319{col 60}{space 4}-.0004639{col 73}{space 3} .0014234
+{txt}ln_publicfloat_mil {c |}{col 20}{res}{space 2} .0005442{col 32}{space 2} .0004785{col 43}{space 1}    1.14{col 52}{space 3}0.255{col 60}{space 4}-.0003938{col 73}{space 3} .0014821
+{txt}{space 12}lev_bk {c |}{col 20}{res}{space 2} .0005824{col 32}{space 2} .0004839{col 43}{space 1}    1.20{col 52}{space 3}0.229{col 60}{space 4}-.0003661{col 73}{space 3} .0015308
+{txt}{space 13}ln_at {c |}{col 20}{res}{space 2}-.0004505{col 32}{space 2} .0004812{col 43}{space 1}   -0.94{col 52}{space 3}0.349{col 60}{space 4}-.0013937{col 73}{space 3} .0004927
+{txt}{space 15}ppe {c |}{col 20}{res}{space 2} 1.69e-06{col 32}{space 2} .0004732{col 43}{space 1}    0.00{col 52}{space 3}0.997{col 60}{space 4}-.0009257{col 73}{space 3} .0009291
+{txt}{space 6}investratio1 {c |}{col 20}{res}{space 2} .0007628{col 32}{space 2} .0004866{col 43}{space 1}    1.57{col 52}{space 3}0.117{col 60}{space 4}-.0001909{col 73}{space 3} .0017165
+{txt}{space 10}sales_gr {c |}{col 20}{res}{space 2} .0006622{col 32}{space 2} .0004863{col 43}{space 1}    1.36{col 52}{space 3}0.173{col 60}{space 4}-.0002909{col 73}{space 3} .0016153
+{txt}{space 16}mb {c |}{col 20}{res}{space 2}-.0004721{col 32}{space 2} .0004827{col 43}{space 1}   -0.98{col 52}{space 3}0.328{col 60}{space 4}-.0014182{col 73}{space 3}  .000474
+{txt}{space 11}ret_ann {c |}{col 20}{res}{space 2} -.000163{col 32}{space 2} .0004854{col 43}{space 1}   -0.34{col 52}{space 3}0.737{col 60}{space 4}-.0011144{col 73}{space 3} .0007883
+{txt}{space 10}lnnumest {c |}{col 20}{res}{space 2}-.0005742{col 32}{space 2}  .000486{col 43}{space 1}   -1.18{col 52}{space 3}0.237{col 60}{space 4}-.0015267{col 73}{space 3} .0003783
+{txt}{space 12}tot_io {c |}{col 20}{res}{space 2}-.0002778{col 32}{space 2} .0004794{col 43}{space 1}   -0.58{col 52}{space 3}0.562{col 60}{space 4}-.0012174{col 73}{space 3} .0006618
+{txt}{space 18} {c |}
+{space 8}sic1_yr_fe {c |}
+{space 16}1  {c |}{col 20}{res}{space 2} .0067434{col 32}{space 2} .0063814{col 43}{space 1}    1.06{col 52}{space 3}0.291{col 60}{space 4}-.0057639{col 73}{space 3} .0192507
+{txt}{space 16}2  {c |}{col 20}{res}{space 2} .0072674{col 32}{space 2} .0061678{col 43}{space 1}    1.18{col 52}{space 3}0.239{col 60}{space 4}-.0048212{col 73}{space 3} .0193561
+{txt}{space 16}3  {c |}{col 20}{res}{space 2} .0061797{col 32}{space 2} .0061267{col 43}{space 1}    1.01{col 52}{space 3}0.313{col 60}{space 4}-.0058284{col 73}{space 3} .0181878
+{txt}{space 16}4  {c |}{col 20}{res}{space 2}  .000098{col 32}{space 2} .0063181{col 43}{space 1}    0.02{col 52}{space 3}0.988{col 60}{space 4}-.0122853{col 73}{space 3} .0124812
+{txt}{space 16}5  {c |}{col 20}{res}{space 2}-.0007372{col 32}{space 2} .0064534{col 43}{space 1}   -0.11{col 52}{space 3}0.909{col 60}{space 4}-.0133855{col 73}{space 3} .0119112
+{txt}{space 16}6  {c |}{col 20}{res}{space 2} .0085829{col 32}{space 2} .0061598{col 43}{space 1}    1.39{col 52}{space 3}0.164{col 60}{space 4}-.0034902{col 73}{space 3}  .020656
+{txt}{space 16}7  {c |}{col 20}{res}{space 2} .0083819{col 32}{space 2} .0061034{col 43}{space 1}    1.37{col 52}{space 3}0.170{col 60}{space 4}-.0035806{col 73}{space 3} .0203445
+{txt}{space 16}8  {c |}{col 20}{res}{space 2} .0049941{col 32}{space 2} .0063459{col 43}{space 1}    0.79{col 52}{space 3}0.431{col 60}{space 4}-.0074436{col 73}{space 3} .0174318
+{txt}{space 16}9  {c |}{col 20}{res}{space 2} .0033716{col 32}{space 2} .0062444{col 43}{space 1}    0.54{col 52}{space 3}0.589{col 60}{space 4}-.0088673{col 73}{space 3} .0156104
+{txt}{space 18} {c |}
+{space 10}state_fe {c |}
+{space 16}1  {c |}{col 20}{res}{space 2}  -.00268{col 32}{space 2} .0063663{col 43}{space 1}   -0.42{col 52}{space 3}0.674{col 60}{space 4}-.0151577{col 73}{space 3} .0097977
+{txt}{space 16}2  {c |}{col 20}{res}{space 2}-.0012259{col 32}{space 2} .0061631{col 43}{space 1}   -0.20{col 52}{space 3}0.842{col 60}{space 4}-.0133053{col 73}{space 3} .0108534
+{txt}{space 16}3  {c |}{col 20}{res}{space 2} .0087248{col 32}{space 2} .0060742{col 43}{space 1}    1.44{col 52}{space 3}0.151{col 60}{space 4}-.0031805{col 73}{space 3}   .02063
+{txt}{space 16}4  {c |}{col 20}{res}{space 2} .0039936{col 32}{space 2}  .006159{col 43}{space 1}    0.65{col 52}{space 3}0.517{col 60}{space 4}-.0080778{col 73}{space 3}  .016065
+{txt}{space 16}5  {c |}{col 20}{res}{space 2}-.0009791{col 32}{space 2} .0062549{col 43}{space 1}   -0.16{col 52}{space 3}0.876{col 60}{space 4}-.0132385{col 73}{space 3} .0112802
+{txt}{space 16}6  {c |}{col 20}{res}{space 2} .0009216{col 32}{space 2} .0061926{col 43}{space 1}    0.15{col 52}{space 3}0.882{col 60}{space 4}-.0112157{col 73}{space 3} .0130589
+{txt}{space 16}7  {c |}{col 20}{res}{space 2}-.0029075{col 32}{space 2} .0062923{col 43}{space 1}   -0.46{col 52}{space 3}0.644{col 60}{space 4}-.0152401{col 73}{space 3} .0094251
+{txt}{space 16}8  {c |}{col 20}{res}{space 2} .0029548{col 32}{space 2} .0061969{col 43}{space 1}    0.48{col 52}{space 3}0.633{col 60}{space 4}-.0091909{col 73}{space 3} .0151006
+{txt}{space 16}9  {c |}{col 20}{res}{space 2} .0059725{col 32}{space 2} .0059771{col 43}{space 1}    1.00{col 52}{space 3}0.318{col 60}{space 4}-.0057424{col 73}{space 3} .0176874
+{txt}{hline 19}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 0 84}Note: dy/dx for factor levels is the discrete change from the base level.{txt}{p_end}
+{res}{txt}
+{com}. estadd local FE1 "Yes"
+
+{txt}added macro:
+                e(FE1) : "{res:Yes}"
+
+{com}. estadd local FE2 "Yes"
+
+{txt}added macro:
+                e(FE2) : "{res:Yes}"
+
+{com}. eststo
+{txt}({res}est2{txt} stored)
+
+{com}. 
+. esttab using "$output/Table8.tex",  ///
+> replace b(5) se(5) star(* 0.10 ** 0.05 *** 0.01  )   ///
+> ar2  br  label mtitle noconstant  nonotes  stats(FE1 FE2 N , ///
+> label("Industry-year FE" "State FE" "Observations" ) ///
+> fmt(0 %9.0fc )) width(/hsize)  drop(*.sic1_yr_fe *.state_fe _cons )
+{res}{txt}(output written to {browse  `"F:/Dropbox/bunching_JOBS/JFE_replication/output/Table8.tex"'})
+
+{com}. 
+. 
+{txt}end of do-file
+
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}F:\Dropbox\bunching_JOBS\JFE_replication\code\master_log_scrambled.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}13 Dec 2023, 15:17:23
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
